@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple_Login_App_Using_Database.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple_Login_App_Using_Database.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Simple_Login_App_Using_Database.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Simple_Login_App_Using_Database.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UCSDConnect.iml" filepath="$PROJECT_DIR$/.idea/modules/UCSDConnect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UCSDConnect.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UCSDConnect.app.iml" />
     </modules>
   </component>
 </project>
