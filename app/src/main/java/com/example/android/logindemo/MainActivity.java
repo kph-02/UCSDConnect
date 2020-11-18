@@ -5,6 +5,7 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,7 +53,13 @@ public class MainActivity extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validate(Name.getText().toString(), Password.getText().toString());
+                if (TextUtils.isEmpty(Name.getText().toString()) ||
+                        TextUtils.isEmpty(Password.getText().toString())){
+                    Toast.makeText(MainActivity.this, "Empty field not allowed!",
+                    Toast.LENGTH_SHORT).show();
+                } else {
+                    validate(Name.getText().toString(), Password.getText().toString());
+                }
             }
         });
 
