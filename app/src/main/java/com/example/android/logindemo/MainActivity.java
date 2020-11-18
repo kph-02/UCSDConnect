@@ -21,10 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText Name;
     private EditText Password;
-    private TextView Info;
     private Button Login;
-    private int counter = 5;
-    private TextView userRegistration;
+    private Button userRegistration;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     private TextView forgotPassword;
@@ -32,16 +30,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
-        Name = (EditText)findViewById(R.id.etName);
-        Password = (EditText)findViewById(R.id.etPassword);
-        Info = (TextView)findViewById(R.id.tvInfo);
-        Login = (Button)findViewById(R.id.btnLogin);
-        userRegistration = (TextView)findViewById(R.id.tvRegister);
-        forgotPassword = (TextView)findViewById(R.id.tvForgotPassword);
+        Name = (EditText)findViewById(R.id.username);
+        Password = (EditText)findViewById(R.id.password);
+        Login = (Button)findViewById(R.id.login);
+        userRegistration = (Button)findViewById(R.id.Register_Button);
+        forgotPassword = (TextView)findViewById(R.id.forgot_password);
 
-        Info.setText("No of attempts remaining: 5");
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -77,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void validate(String userName, String userPassword) {
 
-        progressDialog.setMessage("You can subscribe to my channel until you are verified!");
+        progressDialog.setMessage("Verifying...");
         progressDialog.show();
 
         firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -89,12 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     checkEmailVerification();
                 }else{
                     Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                    counter--;
-                    Info.setText("No of attempts remaining: " + counter);
                     progressDialog.dismiss();
-                    if(counter == 0){
-                        Login.setEnabled(false);
-                    }
                 }
             }
         });
