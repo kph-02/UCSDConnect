@@ -1,2 +1,0 @@
-# UCSDConnect
-Login Demo
