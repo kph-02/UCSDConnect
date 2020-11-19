@@ -188,7 +188,7 @@ public class ChatActivity extends AppCompatActivity {
         else
             message = "Sent Media";
 
-        for(UserProfile mUser : mChatObject.getUserObjectArrayList()){
+        for(UserProfile mUser : mChatObject.getUserProfileArrayList()){
             if(!mUser.getUid().equals(FirebaseAuth.getInstance().getUid())){
                 new SendNotification(message, "New Message", mUser.getNotificationKey());
             }

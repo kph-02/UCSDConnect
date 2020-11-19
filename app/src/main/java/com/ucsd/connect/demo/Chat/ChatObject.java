@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class ChatObject implements Serializable {
     private String chatId;
 
-    private ArrayList<UserProfile> userObjectArrayList = new ArrayList<>();
+    private ArrayList<UserProfile> UserProfileArrayList = new ArrayList<>();
 
     public ChatObject(String chatId){
         this.chatId = chatId;
@@ -17,14 +17,14 @@ public class ChatObject implements Serializable {
     public String getChatId() {
         return chatId;
     }
-    public ArrayList<UserProfile> getUserObjectArrayList() {
-        return userObjectArrayList;
+    public ArrayList<UserProfile> getUserProfileArrayList() {
+        return UserProfileArrayList;
     }
 
 
 
 
     public void addUserToArrayList(UserProfile mUser){
-        userObjectArrayList.add(mUser);
+        UserProfileArrayList.add(mUser);
     }
 }

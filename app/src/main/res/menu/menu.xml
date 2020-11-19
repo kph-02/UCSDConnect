@@ -17,8 +17,15 @@
     </item>
 
     <item
-        android:id="@+id/refreshMenu"
+        android:id="@+id/chatMenu"
         android:orderInCategory="300"
+        app:showAsAction="never"
+        android:title="Chat">
+    </item>
+
+    <item
+        android:id="@+id/refreshMenu"
+        android:orderInCategory="400"
         app:showAsAction="never"
         android:title="Refresh">
     </item>

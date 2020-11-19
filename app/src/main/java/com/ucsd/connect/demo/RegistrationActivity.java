@@ -136,7 +136,7 @@ public class RegistrationActivity extends AppCompatActivity{
         age = userAge.getText().toString();
 
 
-        if(name.isEmpty() || password.isEmpty() || email.isEmpty() || age.isEmpty()){
+        if(name.isEmpty() || password.isEmpty() || email.isEmpty() || age.isEmpty() || imagePath == null){
             Toast.makeText(this, "Please enter all the details", Toast.LENGTH_SHORT).show();
         }else{
             result = true;
@@ -168,7 +168,7 @@ public class RegistrationActivity extends AppCompatActivity{
 
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        DatabaseReference myRef = firebaseDatabase.getReference().child("user").child(firebaseAuth.getUid());
         StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");  //User id/Images/Profile Pic.jpg
         UploadTask uploadTask = imageReference.putFile(imagePath);
         uploadTask.addOnFailureListener(new OnFailureListener() {

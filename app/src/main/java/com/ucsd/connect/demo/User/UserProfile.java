@@ -14,6 +14,8 @@ public class UserProfile implements Serializable {
     public String notificationKey;
     private Boolean selected = false;
 
+    public UserProfile(){}
+
     public UserProfile(String uid){
         this.uid = uid;
     }

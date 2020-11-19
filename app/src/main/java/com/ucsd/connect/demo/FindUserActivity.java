@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -82,48 +81,30 @@ public class FindUserActivity extends AppCompatActivity {
 
     private void getContactList(){
 
-
-        Cursor emails = getContentResolver().query(ContactsContract.CommonDataKinds.Email.CONTENT_URI, null, null, null, null);
-        while(emails.moveToNext()){
-            String name = emails.getString(emails.getColumnIndex(ContactsContract.CommonDataKinds.Email.DISPLAY_NAME));
-            String email = emails.getString(emails.getColumnIndex(ContactsContract.CommonDataKinds.Email.ADDRESS));
-
-            UserProfile mContact = new UserProfile("", "", name, email);
-            contactList.add(mContact);
-            getUserDetails(mContact);
-        }
-    }
-
-    private void getUserDetails(UserProfile mContact) {
         DatabaseReference mUserDB = FirebaseDatabase.getInstance().getReference().child("user");
-        Query query = mUserDB.orderByChild("email").equalTo(mContact.getUserEmail());
+        Query query = mUserDB.orderByChild("userEmail");
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String  email = "",
-                            name = "",
-                            age = "";
+                    String  userEmail = "",
+                            userName = "",
+                            userAge = "";
                     for(DataSnapshot childSnapshot : dataSnapshot.getChildren()){
-                        if(childSnapshot.child("email").getValue()!=null)
-                            email = childSnapshot.child("email").getValue().toString();
-                        if(childSnapshot.child("name").getValue()!=null)
-                            name = childSnapshot.child("name").getValue().toString();
-                        if(childSnapshot.child("age").getValue()!=null)
-                            age = childSnapshot.child("age").getValue().toString();
+                        if (childSnapshot.getKey() == FirebaseAuth.getInstance().getUid()) {
+                            continue;
+                        }
+                        if(childSnapshot.child("userEmail").getValue()!=null)
+                            userEmail = childSnapshot.child("userEmail").getValue().toString();
+                        if(childSnapshot.child("userName").getValue()!=null)
+                            userName = childSnapshot.child("userName").getValue().toString();
+                        if(childSnapshot.child("userAge").getValue()!=null)
+                            userAge = childSnapshot.child("userAge").getValue().toString();
 
-
-                        UserProfile mUser = new UserProfile(childSnapshot.getKey(), age, name, email);
-                        if (name.equals(email))
-                            for(UserProfile mContactIterator : contactList){
-                                if(mContactIterator.getUserEmail().equals(mUser.getUserEmail())){
-                                    mUser.setUserName(mContactIterator.getUserName());
-                                }
-                            }
+                        UserProfile mUser = new UserProfile(childSnapshot.getKey(), userAge, userName, userEmail);
 
                         userList.add(mUser);
                         mUserListAdapter.notifyDataSetChanged();
-                        return;
                     }
                 }
             }
@@ -133,6 +114,11 @@ public class FindUserActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    private void getUserDetails(UserProfile mContact) {
+
     }
 
 

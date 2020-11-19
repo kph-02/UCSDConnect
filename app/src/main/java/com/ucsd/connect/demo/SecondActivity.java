@@ -56,6 +56,10 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(new Intent(SecondActivity.this, ProfileActivity.class));
                 break;
 
+                case R.id.chatMenu:
+                startActivity(new Intent(SecondActivity.this, ContactPageActivity.class));
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }
