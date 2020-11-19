@@ -1,4 +1,4 @@
-package com.example.android.logindemo;
+package com.ucsd.connect.demo;
 
 import android.app.ProgressDialog;
 import android.content.Intent;

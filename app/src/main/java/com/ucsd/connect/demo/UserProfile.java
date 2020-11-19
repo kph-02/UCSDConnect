@@ -1,4 +1,4 @@
-package com.example.android.logindemo;
+package com.ucsd.connect.demo;
 
 /**
  * Created by Dheeraj_Kamath on 2/10/2018.

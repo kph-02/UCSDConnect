@@ -1,4 +1,4 @@
-package com.example.android.logindemo;
+package com.ucsd.connect.demo;
 
 import android.content.Intent;
 import androidx.annotation.NonNull;
