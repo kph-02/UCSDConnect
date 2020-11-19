@@ -26,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.ucsd.connect.demo.User.UserProfile;
 
 import java.io.IOException;
 
@@ -181,7 +182,7 @@ public class RegistrationActivity extends AppCompatActivity{
                 Toast.makeText(RegistrationActivity.this, "Upload successful!", Toast.LENGTH_SHORT).show();
             }
         });
-        UserProfile userProfile = new UserProfile(age, email, name);
+        UserProfile userProfile = new UserProfile(firebaseAuth.getUid(), age, email, name);
         myRef.setValue(userProfile);
     }
 }

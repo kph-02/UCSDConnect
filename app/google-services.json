@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:642373175892:android:7ef219ea911c1ae9497bc1",
+        "mobilesdk_app_id": "1:642373175892:android:ff1261feb928398a497bc1",
         "android_client_info": {
-          "package_name": "com.example.android.logindemo"
+          "package_name": "com.ucsd.connect.demo"
         }
       },
       "oauth_client": [

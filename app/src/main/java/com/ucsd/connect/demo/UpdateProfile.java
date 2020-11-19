@@ -28,6 +28,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+import com.ucsd.connect.demo.User.UserProfile;
 
 import java.io.IOException;
 
@@ -106,7 +107,7 @@ public class UpdateProfile extends AppCompatActivity {
                 String age = newUserAge.getText().toString();
                 String email = newUserEmail.getText().toString();
 
-                UserProfile userProfile = new UserProfile(age, email, name);
+                UserProfile userProfile = new UserProfile(firebaseAuth.getUid(), age, email, name);
 
                 databaseReference.setValue(userProfile);
 
