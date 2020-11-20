@@ -1,5 +1,6 @@
 package com.ucsd.connect.demo;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.provider.ContactsContract;
 import androidx.annotation.NonNull;
@@ -7,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -22,7 +25,9 @@ import com.ucsd.connect.demo.User.UserListAdapter;
 import com.ucsd.connect.demo.User.UserProfile;
 import com.ucsd.connect.demo.User.UserListAdapter;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class FindUserActivity extends AppCompatActivity {
@@ -46,6 +51,7 @@ public class FindUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createChat();
+                startActivity(new Intent(getApplicationContext(), ContactPageActivity.class));
             }
         });
 
@@ -90,20 +96,38 @@ public class FindUserActivity extends AppCompatActivity {
                     String  userEmail = "",
                             userName = "",
                             userAge = "";
+                    ArrayList<String> chats = new ArrayList<String>();
+                    for(DataSnapshot chatSnapshot: dataSnapshot.child(FirebaseAuth.getInstance().getUid()).child("chat").getChildren()){
+                        chats.add(chatSnapshot.getKey());
+                    }
+                    Log.d("test", chats.toString());
                     for(DataSnapshot childSnapshot : dataSnapshot.getChildren()){
-                        if (!childSnapshot.getKey().equals(FirebaseAuth.getInstance().getUid())) {
-                            if (childSnapshot.child("userEmail").getValue() != null)
-                                userEmail = childSnapshot.child("userEmail").getValue().toString();
-                            if (childSnapshot.child("userName").getValue() != null)
-                                userName = childSnapshot.child("userName").getValue().toString();
-                            if (childSnapshot.child("userAge").getValue() != null)
-                                userAge = childSnapshot.child("userAge").getValue().toString();
-
-                            UserProfile mUser = new UserProfile(childSnapshot.getKey(), userAge, userName, userEmail);
-
-                            userList.add(mUser);
-                            mUserListAdapter.notifyDataSetChanged();
+                        if (childSnapshot.getKey().equals(FirebaseAuth.getInstance().getUid())) {
+                            continue;
                         }
+                        boolean repeat = false;
+                        for(DataSnapshot chatSnapshot: childSnapshot.child("chat").getChildren()) {
+                            for(String chat: chats) {
+                                if(chatSnapshot.getKey().equals(chat)) {
+                                    repeat = true;
+                                }
+                            }
+                        }
+                        if(repeat) {
+                            continue;
+                        }
+                        if (childSnapshot.child("userEmail").getValue() != null)
+                            userEmail = childSnapshot.child("userEmail").getValue().toString();
+                        if (childSnapshot.child("userName").getValue() != null)
+                            userName = childSnapshot.child("userName").getValue().toString();
+                        if (childSnapshot.child("userAge").getValue() != null)
+                            userAge = childSnapshot.child("userAge").getValue().toString();
+
+                        UserProfile mUser = new UserProfile(childSnapshot.getKey(), userAge, userName, userEmail);
+
+                        userList.add(mUser);
+                        mUserListAdapter.notifyDataSetChanged();
+
                     }
                 }
             }
