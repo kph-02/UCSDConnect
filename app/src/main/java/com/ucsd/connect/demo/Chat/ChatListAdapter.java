@@ -5,14 +5,18 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.ucsd.connect.demo.ChatActivity;
 import com.ucsd.connect.demo.R;
+import com.ucsd.connect.demo.User.UserProfile;
 
 import java.util.ArrayList;
 
@@ -37,7 +41,15 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
 
     @Override
     public void onBindViewHolder(@NonNull final ChatListViewHolder holder, final int position) {
-        holder.mTitle.setText(chatList.get(position).getChatId());
+        String displayName = "";
+        ChatObject currChat = chatList.get(position);
+        for (UserProfile userIt: currChat.getUserProfileArrayList()) {
+            if (!userIt.getUid().equals(FirebaseAuth.getInstance().getUid())) {
+                displayName += userIt.getUserName() + " ";
+            }
+        }
+
+        holder.mTitle.setText(displayName);
 
         holder.mLayout.setOnClickListener(new View.OnClickListener() {
             @Override

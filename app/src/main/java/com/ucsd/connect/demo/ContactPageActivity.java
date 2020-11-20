@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,6 +34,7 @@ public class ContactPageActivity extends AppCompatActivity {
     private RecyclerView mChatList;
     private RecyclerView.Adapter mChatListAdapter;
     private RecyclerView.LayoutManager mChatListLayoutManager;
+    private String currUid;
 
     ArrayList<ChatObject> chatList;
 
@@ -76,11 +78,14 @@ public class ContactPageActivity extends AppCompatActivity {
 
         getPermissions();
         initializeRecyclerView();
-        getUserChatList();
+
+        currUid = FirebaseAuth.getInstance().getUid();
+
+        getUserChatList(currUid);
     }
 
-    private void getUserChatList(){
-        DatabaseReference mUserChatDB = FirebaseDatabase.getInstance().getReference().child("user").child(FirebaseAuth.getInstance().getUid()).child("chat");
+    private void getUserChatList(String currUid){
+        DatabaseReference mUserChatDB = FirebaseDatabase.getInstance().getReference().child("user").child(currUid).child("chat");
 
         mUserChatDB.addValueEventListener(new ValueEventListener() {
             @Override
@@ -124,6 +129,7 @@ public class ContactPageActivity extends AppCompatActivity {
                             if(mChat.getChatId().equals(chatId)){
                                 UserProfile mUser = new UserProfile(userSnapshot.getKey());
                                 mChat.addUserToArrayList(mUser);
+                                mChat.getCurrUser().setUid(currUid);
                                 getUserData(mUser);
                             }
                         }
@@ -144,6 +150,7 @@ public class ContactPageActivity extends AppCompatActivity {
         mUserDb.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String userName = dataSnapshot.child("userName").getValue().toString();
                 UserProfile mUser = new UserProfile(dataSnapshot.getKey());
 
                 if(dataSnapshot.child("notificationKey").getValue() != null)
@@ -153,6 +160,10 @@ public class ContactPageActivity extends AppCompatActivity {
                     for (UserProfile mUserIt : mChat.getUserProfileArrayList()){
                         if(mUserIt.getUid().equals(mUser.getUid())){
                             mUserIt.setNotificationKey(mUser.getNotificationKey());
+                            mUserIt.setUserName(userName);
+                            if (mUserIt.getUid().equals(currUid)) {
+                                mChat.getCurrUser().setUserName(userName);
+                            }
                         }
                     }
                 }

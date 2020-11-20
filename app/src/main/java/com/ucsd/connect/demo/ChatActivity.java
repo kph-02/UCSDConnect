@@ -133,7 +133,7 @@ public class ChatActivity extends AppCompatActivity {
 
         final Map newMessageMap = new HashMap<>();
 
-        newMessageMap.put("creator", FirebaseAuth.getInstance().getUid());
+        newMessageMap.put("creator", mChatObject.getCurrUser().getUserName());
 
         if(!mMessage.getText().toString().isEmpty())
             newMessageMap.put("text", mMessage.getText().toString());

@@ -91,20 +91,19 @@ public class FindUserActivity extends AppCompatActivity {
                             userName = "",
                             userAge = "";
                     for(DataSnapshot childSnapshot : dataSnapshot.getChildren()){
-                        if (childSnapshot.getKey() == FirebaseAuth.getInstance().getUid()) {
-                            continue;
+                        if (!childSnapshot.getKey().equals(FirebaseAuth.getInstance().getUid())) {
+                            if (childSnapshot.child("userEmail").getValue() != null)
+                                userEmail = childSnapshot.child("userEmail").getValue().toString();
+                            if (childSnapshot.child("userName").getValue() != null)
+                                userName = childSnapshot.child("userName").getValue().toString();
+                            if (childSnapshot.child("userAge").getValue() != null)
+                                userAge = childSnapshot.child("userAge").getValue().toString();
+
+                            UserProfile mUser = new UserProfile(childSnapshot.getKey(), userAge, userName, userEmail);
+
+                            userList.add(mUser);
+                            mUserListAdapter.notifyDataSetChanged();
                         }
-                        if(childSnapshot.child("userEmail").getValue()!=null)
-                            userEmail = childSnapshot.child("userEmail").getValue().toString();
-                        if(childSnapshot.child("userName").getValue()!=null)
-                            userName = childSnapshot.child("userName").getValue().toString();
-                        if(childSnapshot.child("userAge").getValue()!=null)
-                            userAge = childSnapshot.child("userAge").getValue().toString();
-
-                        UserProfile mUser = new UserProfile(childSnapshot.getKey(), userAge, userName, userEmail);
-
-                        userList.add(mUser);
-                        mUserListAdapter.notifyDataSetChanged();
                     }
                 }
             }
