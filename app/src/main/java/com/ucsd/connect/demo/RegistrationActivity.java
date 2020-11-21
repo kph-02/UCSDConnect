@@ -51,6 +51,7 @@ public class RegistrationActivity extends AppCompatActivity{
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
                 userProfilePic.setImageBitmap(bitmap);
             } catch (IOException e) {
+                //TODO: Change this lol. or not.
                 Log.e("cock", "YOU FUCKED IT BITCH");
                 e.printStackTrace();
             }
@@ -159,7 +160,7 @@ public class RegistrationActivity extends AppCompatActivity{
                        finish();
                        startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
                    }else{
-                       Toast.makeText(RegistrationActivity.this, "Verification mail has'nt been sent!", Toast.LENGTH_SHORT).show();
+                       Toast.makeText(RegistrationActivity.this, "Verification mail hasn't been sent!", Toast.LENGTH_SHORT).show();
                    }
                 }
             });
