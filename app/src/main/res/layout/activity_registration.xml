@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ucsd.connect.demo.RegistrationActivity">
-
+//I WILL FINISH THIS PAGE TONIGHT
     <EditText
         android:id="@+id/etUserName"
         android:layout_width="wrap_content"
