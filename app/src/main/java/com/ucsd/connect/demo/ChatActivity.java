@@ -37,6 +37,7 @@ import java.util.Map;
 
 public class ChatActivity extends AppCompatActivity {
 
+
     private RecyclerView mChat, mMedia;
     private RecyclerView.Adapter mChatAdapter, mMediaAdapter;
     private RecyclerView.LayoutManager mChatLayoutManager, mMediaLayoutManager;
