@@ -1,5 +1,6 @@
 package com.ucsd.connect.demo;
 
+import android.content.Context;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,6 +31,16 @@ public class SecondActivity extends AppCompatActivity {
                 Logout();
             }
         });
+
+        Button StartCallbutton = (Button) findViewById(R.id.StartCallbutton);
+        StartCallbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent((Context)SecondActivity.this, StartCall.class);
+                SecondActivity.this.startActivity(intent);
+            }
+        });
+
     }
 
     private void Logout(){
