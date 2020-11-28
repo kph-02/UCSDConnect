@@ -109,13 +109,14 @@
         android:id="@+id/imageView"
         android:layout_width="318dp"
         android:layout_height="477dp"
+        app:srcCompat="@drawable/white_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.628"
-        app:srcCompat="@drawable/white_background" />
+       />
 
     <TextView
         android:id="@+id/forgot_password"
