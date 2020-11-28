@@ -5,25 +5,25 @@
     <item
         android:id="@+id/friendsMenu"
         android:orderInCategory="100"
+        app:showAsAction="always"
         android:title="Friends"
-        android:icon="@drawable/ic_search"
-        android:showAsAction="always">
+        android:icon="@drawable/ic_search">
     </item>
 
     <item
         android:id="@+id/profileMenu"
         android:orderInCategory="200"
+        app:showAsAction="always"
         android:title="Profile"
-        android:icon="@drawable/ic_profile"
-        android:showAsAction="never">
+        android:icon="@drawable/ic_profile">
     </item>
 
     <item
         android:id="@+id/matchMenu"
         android:orderInCategory="300"
+        app:showAsAction="always"
         android:title="Match"
-        android:icon="@drawable/ic_home"
-        android:showAsAction="never">
+        android:icon="@drawable/ic_home">
     </item>
 
 </menu>
