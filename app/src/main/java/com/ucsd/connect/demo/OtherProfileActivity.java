@@ -11,9 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,6 +35,7 @@ public class OtherProfileActivity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private FirebaseStorage firebaseStorage;
     private String chatUid;
+    private BottomNavigationView menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,14 +68,31 @@ public class OtherProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
-                profileName.setText("Name: " + userProfile.getUserName());
-                profileAge.setText("Age: " + userProfile.getUserAge());
-                profileEmail.setText("Email: " + userProfile.getUserEmail());
+                profileName.setText(userProfile.getUserName());
+                profileAge.setText(userProfile.getUserAge());
+                profileEmail.setText(userProfile.getUserEmail());
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Toast.makeText(OtherProfileActivity.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        menu = (BottomNavigationView)findViewById(R.id.bottomNavigationView);
+        menu.setSelectedItemId(R.id.friendsMenu);
+        menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.profileMenu:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        break;
+                    case R.id.matchMenu:
+                        startActivity(new Intent(getApplicationContext(), SecondActivity.class));
+                        break;
+                }
+                return false;
             }
         });
 

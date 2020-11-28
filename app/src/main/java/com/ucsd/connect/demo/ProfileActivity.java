@@ -3,6 +3,7 @@ package com.ucsd.connect.demo;
 import android.content.Intent;
 import android.net.Uri;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,6 +26,8 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 import com.ucsd.connect.demo.User.UserProfile;
 
+import org.jbox2d.dynamics.contacts.Contact;
+
 public class ProfileActivity extends AppCompatActivity {
 
     private ImageView profilePic;
@@ -32,6 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseStorage firebaseStorage;
+    private BottomNavigationView menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +70,9 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
-                profileName.setText("Name: " + userProfile.getUserName());
-                profileAge.setText("Age: " + userProfile.getUserAge());
-                profileEmail.setText("Email: " + userProfile.getUserEmail());
+                profileName.setText(userProfile.getUserName());
+                profileAge.setText(userProfile.getUserAge());
+                profileEmail.setText(userProfile.getUserEmail());
             }
 
             @Override
@@ -87,6 +92,23 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ProfileActivity.this, UpdatePassword.class));
+            }
+        });
+
+        menu = (BottomNavigationView)findViewById(R.id.bottomNavigationView);
+        menu.setSelectedItemId(R.id.profileMenu);
+        menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.friendsMenu:
+                        startActivity(new Intent(getApplicationContext(), ContactPageActivity.class));
+                        break;
+                    case R.id.matchMenu:
+                        startActivity(new Intent(getApplicationContext(), SecondActivity.class));
+                        break;
+                }
+                return false;
             }
         });
     }
