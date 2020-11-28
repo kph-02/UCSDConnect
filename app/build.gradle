@@ -50,11 +50,9 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.3.1'
     implementation 'androidx.navigation:navigation-ui:2.3.1'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-<<<<<<< HEAD
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-=======
+
     implementation 'androidx.cardview:cardview:1.0.0'
->>>>>>> 23ae4145e57600ec93fb6be00c44c539541fc1b3
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
