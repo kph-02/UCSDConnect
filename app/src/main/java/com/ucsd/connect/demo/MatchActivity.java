@@ -1,5 +1,4 @@
 package com.ucsd.connect.demo;
-        ;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
