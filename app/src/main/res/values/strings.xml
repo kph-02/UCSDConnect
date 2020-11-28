@@ -32,6 +32,6 @@
     <string name="menu_profile">Profile</string>
     <string name="find_tritons_button">Find Tritons</string>
     <string name="connect_button">Connect</string>
-    <string name="match_name">Karl Hernandez</string>
+    <string name="match_name">Find New Match</string>
     <string name="title_activity_find_user">FindUserActivity</string>
 </resources>

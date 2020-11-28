@@ -57,7 +57,7 @@
 
     <!--This text should later be able to change depending on the match with string/match_name -->
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/match_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/match_name"
         app:layout_constraintVertical_bias="0.012" />
 
     <com.igalata.bubblepicker.rendering.BubblePicker
