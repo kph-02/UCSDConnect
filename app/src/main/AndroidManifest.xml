@@ -19,7 +19,6 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartCall"></activity>
         <activity android:name=".CallActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

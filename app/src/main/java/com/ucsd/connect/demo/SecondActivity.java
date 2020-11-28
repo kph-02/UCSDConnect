@@ -36,8 +36,8 @@ public class SecondActivity extends AppCompatActivity {
         StartCallbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent((Context)SecondActivity.this, StartCall.class);
-                SecondActivity.this.startActivity(intent);
+                Intent intent = new Intent(SecondActivity.this, CallActivity.class);
+                startActivity(intent);
             }
         });
 
