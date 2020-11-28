@@ -1,6 +1,9 @@
 package com.ucsd.connect.demo;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +25,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -43,7 +47,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class CallActivity extends AppCompatActivity {
+public class CallActivity extends AppCompatActivity {
 
 
     private String username = "";
@@ -51,29 +55,38 @@ public final class CallActivity extends AppCompatActivity {
     private String friendsUid = "";
     private boolean isPeerConnected = false;
     private FirebaseAuth firebaseAuth;
-    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference userDbRef = firebaseDatabase.getReference("user");
-    private FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference userDbRef;
+    private FirebaseUser currentFirebaseUser;
     private boolean isAudio = true;
     private boolean isVideo = true;
     private String uniqueId = "";
-    private WebView webView = (WebView) findViewById(R.id.webView);
-    private RelativeLayout callLayout = (RelativeLayout) findViewById(id.callLayout);
-    private TextView incomingCallTxt = (TextView) findViewById(id.incomingCallTxt);
-    private RelativeLayout inputLayout = (RelativeLayout) findViewById(id.inputLayout);
-    private LinearLayout callControlLayout = (LinearLayout) findViewById(id.callControlLayout);
+
     private boolean friendsNameValidity = false;
+
+    private final String[] permissions = new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"};
+    private final int requestCode = 1;
 
 
 
 
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call);
 
+        Intent intent = getIntent();
+        firebaseAuth = FirebaseAuth.getInstance();
 
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        userDbRef = firebaseDatabase.getReference("user");
+        currentFirebaseUser = firebaseAuth.getCurrentUser();
 
-        CallActivity.this.setUsername(userDbRef.child(firebaseAuth.getUid()).child("userName").getKey());
+        if (!this.isPermissionGranted()) {
+            this.askPermissions();
+        }
+
+        this.setUsername(userDbRef.child(firebaseAuth.getUid()).child("userName").getKey());
 
         Button callBtn = (Button) findViewById(R.id.callBtn);
         ImageView toggleAudioBtn = (ImageView) findViewById(R.id.toggleAudioBtn);
@@ -89,6 +102,7 @@ public final class CallActivity extends AppCompatActivity {
                 EditText friendNameEdit = (EditText) findViewById(id.friendNameEdit);
                 CallActivity.this.setFriendsUsername(friendNameEdit.getText().toString());
                 if (friendNameValid(friendsUsername) == true ) {
+                    friendsUid = getFriendsUid(friendsUsername);
                     CallActivity.this.sendCallRequest();
                 } else {
                     Toast.makeText(CallActivity.this, (CharSequence)"This user does not exist.", Toast.LENGTH_LONG).show();
@@ -113,6 +127,7 @@ public final class CallActivity extends AppCompatActivity {
         });
 
     }
+
 
     private boolean friendNameValid(String friendsUsername) {
         DatabaseReference mUserDB = FirebaseDatabase.getInstance().getReference();
@@ -197,7 +212,7 @@ public final class CallActivity extends AppCompatActivity {
 
 
     private void setupWebView() {
-
+        WebView webView = (WebView) findViewById(R.id.webView);
        webView.setWebChromeClient((WebChromeClient) new WebChromeClient() {
            public void onPermissionRequest(PermissionRequest request) {
                if (request != null) {
@@ -214,7 +229,7 @@ public final class CallActivity extends AppCompatActivity {
     }
 
     private void loadVideoCall() {
-
+        WebView webView = (WebView) findViewById(R.id.webView);
         String filePath = "file:android_asset/call.html";
         webView.loadUrl(filePath);
         webView.setWebViewClient((WebViewClient)(new WebViewClient() {
@@ -246,6 +261,8 @@ public final class CallActivity extends AppCompatActivity {
     }
 
     private final void onCallRequest(String caller) {
+        RelativeLayout callLayout = (RelativeLayout) findViewById(id.callLayout);
+        TextView incomingCallTxt = (TextView) findViewById(id.incomingCallTxt);
         if (caller != null) {
             callLayout.setVisibility(View.VISIBLE);
             incomingCallTxt.setText((CharSequence)(caller + " is calling..."));
@@ -275,6 +292,8 @@ public final class CallActivity extends AppCompatActivity {
     }
 
     private void switchToControls() {
+        LinearLayout callControlLayout = (LinearLayout) findViewById(id.callControlLayout);
+        RelativeLayout inputLayout = (RelativeLayout) findViewById(id.inputLayout);
         inputLayout.setVisibility(View.GONE);
         callControlLayout.setVisibility(View.VISIBLE);
     }
@@ -285,12 +304,26 @@ public final class CallActivity extends AppCompatActivity {
     }
 
     private void callJavascriptFunction(String functionString) {
+        WebView webView = (WebView) findViewById(R.id.webView);
         webView.post((Runnable)(new Runnable() {
             public final void run() {
                 webView.evaluateJavascript(functionString, (ValueCallback)null);
             }
 
         }));
+    }
+
+    private boolean isPermissionGranted() {
+        for(String permission : permissions) {
+            if(ActivityCompat.checkSelfPermission((Context)this, permission) != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private final void askPermissions() {
+        ActivityCompat.requestPermissions((Activity)this, this.permissions, this.requestCode);
     }
 
 
@@ -320,15 +353,12 @@ public final class CallActivity extends AppCompatActivity {
         return this.isPeerConnected;
     }
 
-    public final void setPeerConnected(boolean var1) {
-        this.isPeerConnected = var1;
-    }
-
     public void onBackPressed() {
         this.finish();
     }
 
     protected void onDestroy() {
+        WebView webView = (WebView) findViewById(R.id.webView);
         this.userDbRef.child(this.username).setValue((Object)null);
         webView.loadUrl("about:blank");
         super.onDestroy();

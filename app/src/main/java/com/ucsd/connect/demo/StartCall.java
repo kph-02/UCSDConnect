@@ -35,14 +35,12 @@ public class StartCall extends AppCompatActivity{
         }
         Button loginBtn = (Button) findViewById(R.id.loginBtn);
 
-        FirebaseKt.initialize(Firebase.INSTANCE, (Context)this);
         loginBtn.setOnClickListener((OnClickListener)(new OnClickListener() {
             public final void onClick(View it) {
                 EditText usernameEdit = (EditText) findViewById(R.id.usernameEdit);
                 String username = usernameEdit.getText().toString();
-                Intent intent = new Intent((Context)StartCall.this, CallActivity.class);
-                intent.putExtra("username", username);
-                StartCall.this.startActivity(intent);
+                Intent intent = new Intent(StartCall.this, CallActivity.class);
+                startActivity(intent);
             }
         }));
     }
