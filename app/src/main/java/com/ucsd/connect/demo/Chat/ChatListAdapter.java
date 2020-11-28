@@ -21,6 +21,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 import com.ucsd.connect.demo.ChatActivity;
+import com.ucsd.connect.demo.OtherProfileActivity;
 import com.ucsd.connect.demo.R;
 import com.ucsd.connect.demo.User.UserProfile;
 
@@ -72,11 +73,22 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
             }
         });
 
-        holder.mLayout.setOnClickListener(new View.OnClickListener() {
+        holder.mChatName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), ChatActivity.class);
                 intent.putExtra("chatObject", chatList.get(holder.getAdapterPosition()));
+                v.getContext().startActivity(intent);
+            }
+        });
+
+        String finalChatUid = chatUid;
+        holder.mChatPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("test", "clicked");
+                Intent intent = new Intent(v.getContext(), OtherProfileActivity.class);
+                intent.putExtra("chatUid", finalChatUid);
                 v.getContext().startActivity(intent);
             }
         });
@@ -95,11 +107,16 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
         public TextView mTitle;
         public LinearLayout mLayout;
         public ImageView mProfilePic;
+        public LinearLayout mChatName;
+        public LinearLayout mChatPic;
+
         public ChatListViewHolder(View view){
             super(view);
             mTitle = view.findViewById(R.id.title);
             mLayout = view.findViewById(R.id.layout);
             mProfilePic = view.findViewById(R.id.ProfilePic);
+            mChatName = view.findViewById(R.id.chat_name);
+            mChatPic = view.findViewById(R.id.chat_pic);
         }
     }
 }

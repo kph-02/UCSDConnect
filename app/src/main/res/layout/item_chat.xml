@@ -12,7 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:id="@+id/chat_layout1">
+            android:id="@+id/chat_pic">
 
             <ImageView
                 android:id="@+id/ProfilePic"
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:id="@+id/chat_layout2">
+            android:id="@+id/chat_name">
 
             <TextView
                 android:id="@+id/title"

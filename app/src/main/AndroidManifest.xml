@@ -42,6 +42,7 @@
         <activity android:name=".RegistrationActivity"/>
         <activity android:name=".PasswordActivity" />
         <activity android:name=".ProfileActivity" />
+        <activity android:name=".OtherProfileActivity" />
         <activity android:name=".UpdateProfile" />
         <activity android:name=".UpdatePassword" />
         <activity android:name=".ContactPageActivity"/>
