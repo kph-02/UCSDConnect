@@ -29,14 +29,14 @@
     android:layout_height="wrap_content"
     android:textColor="#FFFFFF"
     android:textSize="30dp"
-    android:text="Do you like Question1?"
+    android:text="Do you like raccoons?"
     android:id="@+id/question_one"/>
 
     <CheckBox
         android:id="@+id/question_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Do you like Question2?"
+        android:text="Do you like on-campus food?"
         android:textColor="#FFFFFF"
         android:textSize="30dp" />
 
@@ -45,56 +45,57 @@
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
-        android:text="Do you like Question3?"
+        android:text="Are you religious?"
         android:id="@+id/question_three"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
-        android:text="Do you like Question4?"
+        android:text="Do you workout?"
         android:id="@+id/question_four"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
-        android:text="Do you like Question5?"
+        android:text="Do you game?"
         android:id="@+id/question_five"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
-        android:text="Do you like Question6?"
+        android:text="Do you watch anime?
+"
         android:id="@+id/question_six"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
-        android:text="Do you like Question7?"
+        android:text="Do you like boba?"
         android:id="@+id/question_seven"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
-        android:text="Do you like Question8?"
+        android:text="Are you a member of IEEE?"
         android:id="@+id/question_eight"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
-        android:text="Do you like Question9?"
+        android:text="Are you a STEM major?"
         android:id="@+id/question_nine"/>
 
     <CheckBox
         android:id="@+id/question_ten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Do you like Question10?"
+        android:text="Are you depressed?"
         android:textColor="#FFFFFF"
         android:textSize="30dp" />
 
