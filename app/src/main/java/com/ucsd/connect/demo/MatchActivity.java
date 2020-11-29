@@ -82,9 +82,11 @@ public class MatchActivity extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                /*
                 for (String trait: (List<String>) dataSnapshot.child("traits").getValue()) {
                     myTraits.add(trait);
                 }
+                */
                 currUser = new UserProfile(dataSnapshot.getValue(UserProfile.class));
                 Log.d("test", "curr user set");
             }

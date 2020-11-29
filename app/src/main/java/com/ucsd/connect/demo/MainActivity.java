@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide(); //hide the title bar
+        //getSupportActionBar().hide(); //hide the title bar
         setContentView(R.layout.activity_login);
         Name = (EditText)findViewById(R.id.username);
         Password = (EditText)findViewById(R.id.password);
