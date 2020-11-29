@@ -78,7 +78,9 @@ public class ChatActivity extends AppCompatActivity {
         initializeMessage();
         initializeMedia();
         getChatMessages();
+
     }
+
 
     private void getChatMessages() {
         mChatMessagesDb.addChildEventListener(new ChildEventListener() {
