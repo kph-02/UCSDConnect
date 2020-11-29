@@ -140,7 +140,7 @@ public class ChatActivity extends AppCompatActivity {
 
         final Map newMessageMap = new HashMap<>();
 
-        newMessageMap.put("creator", mChatObject.getCurrUser().getUserName());
+        newMessageMap.put("creator", mChatObject.getCurrUser().getUid());
 
         if(!mMessage.getText().toString().isEmpty())
             newMessageMap.put("text", mMessage.getText().toString());
