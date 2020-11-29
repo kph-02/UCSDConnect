@@ -29,6 +29,9 @@ import com.google.firebase.storage.UploadTask;
 import com.ucsd.connect.demo.User.UserProfile;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class RegistrationActivity extends AppCompatActivity{
 
@@ -51,7 +54,6 @@ public class RegistrationActivity extends AppCompatActivity{
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
                 userProfilePic.setImageBitmap(bitmap);
             } catch (IOException e) {
-                Log.e("cock", "YOU FUCKED IT BITCH");
                 e.printStackTrace();
             }
         }
@@ -94,7 +96,6 @@ public class RegistrationActivity extends AppCompatActivity{
                             if(task.isSuccessful()){
                                 //sendEmailVerification();
                                 sendUserData();
-                                firebaseAuth.signOut();
                                 Toast.makeText(RegistrationActivity.this, "To register please complete survey", Toast.LENGTH_SHORT).show();
                                 finish();
                                 startActivity(new Intent(RegistrationActivity.this, QuestionnaireActivity.class));
@@ -182,7 +183,7 @@ public class RegistrationActivity extends AppCompatActivity{
                 Toast.makeText(RegistrationActivity.this, "Upload successful!", Toast.LENGTH_SHORT).show();
             }
         });
-        UserProfile userProfile = new UserProfile(firebaseAuth.getUid(), age, email, name);
+        UserProfile userProfile = new UserProfile(firebaseAuth.getUid(), age, email, name, Arrays.asList("init"));
         myRef.setValue(userProfile);
     }
 }

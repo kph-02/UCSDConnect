@@ -15,6 +15,12 @@ public class ChatObject implements Serializable {
         this.chatId = chatId;
     }
 
+    public ChatObject(String chatId, UserProfile currUser, ArrayList<UserProfile> UserProfileArrayList){
+        this.chatId = chatId;
+        this.currUser = currUser;
+        this.UserProfileArrayList = UserProfileArrayList;
+    }
+
     public String getChatId() {
         return chatId;
     }

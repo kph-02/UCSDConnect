@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="matchTraits">
-        <item>Gaming</item>
-        <item>Coding</item>
-        <item>Hiking</item>
-        <item>Memes</item>
-        <item>Food</item>
-    </string-array>
+<!--    <string-array name="matchTraits">-->
+<!--        <item>Gaming</item>-->
+<!--        <item>Coding</item>-->
+<!--        <item>Hiking</item>-->
+<!--        <item>Memes</item>-->
+<!--        <item>Food</item>-->
+<!--    </string-array>-->
 
     <integer-array name="images">
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
         <item>@drawable/invisible</item>
         <item>@drawable/invisible</item>
         <item>@drawable/invisible</item>
@@ -18,6 +23,11 @@
     </integer-array>
 
     <integer-array name="colors">
+        <item>@color/grey</item>
+        <item>@color/grey</item>
+        <item>@color/grey</item>
+        <item>@color/grey</item>
+        <item>@color/grey</item>
         <item>@color/grey</item>
         <item>@color/grey</item>
         <item>@color/grey</item>

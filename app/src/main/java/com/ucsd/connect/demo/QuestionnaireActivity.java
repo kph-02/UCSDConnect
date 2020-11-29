@@ -9,13 +9,23 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class QuestionnaireActivity extends AppCompatActivity {
     private CheckBox question1, question2, question3, question4, question5, question6, question7, question8, question9, question10;
     private Button getAnswersButton;
-    private ArrayList<String> results;
+    private List<String> results;
+    private FirebaseDatabase firebaseDatabase;
+    private FirebaseAuth firebaseAuth;
+
     private String stringResults;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,17 +145,20 @@ public class QuestionnaireActivity extends AppCompatActivity {
                 }
             }
         });
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
         getAnswersButton.setOnClickListener(new View.OnClickListener(){
 
 
             @Override
             public void onClick(View v){
-                StringBuilder builder = new StringBuilder();
-               for(String s:results){
-               builder.append(s).append(" ");
-               }
-               stringResults= builder.toString();
+                final DatabaseReference databaseReference = firebaseDatabase.getReference().child("user").child(firebaseAuth.getUid()).child("traits");
+                databaseReference.setValue(results);
+                firebaseAuth.signOut();
                 Toast.makeText(QuestionnaireActivity.this, "Thanks for completing the survey", Toast.LENGTH_SHORT).show();
+                finish();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
             }
