@@ -37,9 +37,9 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (question1.isChecked()) {
-                    results.add("Question1");
+                    results.add("Raccoons");
                 } else {
-                    results.remove("Question1");
+                    results.remove("Raccoons");
                 }
             }
         });
@@ -47,9 +47,9 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (question2.isChecked()) {
-                    results.add("Question2");
+                    results.add("Bad Taste-Buds");
                 } else {
-                    results.remove("Question2");
+                    results.remove("Bad Taste-Buds");
                 }
             }
         });
@@ -57,9 +57,9 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (question1.isChecked()) {
-                    results.add("Question3");
+                    results.add("Religious");
                 } else {
-                    results.remove("Question3");
+                    results.remove("Religious");
                 }
             }
         });
@@ -67,9 +67,9 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (question3.isChecked()) {
-                    results.add("Question4");
+                    results.add("Fitness");
                 } else {
-                    results.remove("Question4");
+                    results.remove("Fitness");
                 }
             }
         });
@@ -77,9 +77,9 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (question4.isChecked()) {
-                    results.add("Question5");
+                    results.add("Gamer");
                 } else {
-                    results.remove("Question5");
+                    results.remove("Gamer");
                 }
             }
         });
@@ -87,9 +87,9 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (question1.isChecked()) {
-                    results.add("Question6");
+                    results.add("Weeb");
                 } else {
-                    results.remove("Question6");
+                    results.remove("Weeb");
                 }
             }
         });
@@ -97,9 +97,9 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (question7.isChecked()) {
-                    results.add("Question7");
+                    results.add("Boba-holic");
                 } else {
-                    results.remove("Question7");
+                    results.remove("Boba-holic");
                 }
             }
         });
@@ -107,19 +107,21 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (question8.isChecked()) {
-                    results.add("Question8");
+                    results.add("IEEE");
                 } else {
-                    results.remove("Question8");
+                    results.remove("IEEE");
                 }
             }
         });
         question9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (question9.isChecked()) {
-                    results.add("Question9");
+
+                if (question8.isChecked()) {
+
+                    results.add("STEM");
                 } else {
-                    results.remove("Question9");
+                    results.remove("STEM");
                 }
             }
         });
@@ -127,9 +129,9 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (question10.isChecked()) {
-                    results.add("Question10");
+                    results.add("Depressed");
                 } else {
-                    results.remove("Question10");
+                    results.remove("Depressed");
                 }
             }
         });
