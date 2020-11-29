@@ -56,6 +56,8 @@
             android:id="@+id/viewMedia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="view Media" />
+            android:text="view Media"
+            android:background="@drawable/mediabutton"/>
+
     </LinearLayout>
 </LinearLayout>
