@@ -4,8 +4,12 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <application
         android:allowBackup="true"
@@ -14,11 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
         <activity android:name=".QuestionnaireActivity"></activity>
-=======
         <activity android:name=".MatchActivity"></activity>
->>>>>>> 23ae4145e57600ec93fb6be00c44c539541fc1b3
         <activity android:name=".Questionaire_Test" />
         <activity
             android:name=".FindUserActivity"
@@ -42,5 +43,4 @@
         <activity android:name=".ContactPageActivity" />
         <activity android:name=".ChatActivity" />
     </application>
-
 </manifest>
