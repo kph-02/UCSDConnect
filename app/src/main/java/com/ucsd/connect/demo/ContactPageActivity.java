@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DataSnapshot;
@@ -35,6 +37,7 @@ public class ContactPageActivity extends AppCompatActivity {
     private RecyclerView.Adapter mChatListAdapter;
     private RecyclerView.LayoutManager mChatListLayoutManager;
     private String currUid;
+    private BottomNavigationView menu;
 
     ArrayList<ChatObject> chatList;
 
@@ -82,6 +85,23 @@ public class ContactPageActivity extends AppCompatActivity {
         currUid = FirebaseAuth.getInstance().getUid();
 
         getUserChatList(currUid);
+
+        menu = (BottomNavigationView)findViewById(R.id.bottomNavigationView);
+        menu.setSelectedItemId(R.id.friendsMenu);
+        menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.profileMenu:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        break;
+                    case R.id.matchMenu:
+                        startActivity(new Intent(getApplicationContext(), SecondActivity.class));
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     private void getUserChatList(String currUid){

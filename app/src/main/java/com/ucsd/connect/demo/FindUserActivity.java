@@ -10,10 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,6 +37,7 @@ public class FindUserActivity extends AppCompatActivity {
     private RecyclerView mUserList;
     private RecyclerView.Adapter mUserListAdapter;
     private RecyclerView.LayoutManager mUserListLayoutManager;
+    private BottomNavigationView menu;
 
     ArrayList<UserProfile> userList, contactList;
 
@@ -57,6 +60,23 @@ public class FindUserActivity extends AppCompatActivity {
 
         initializeRecyclerView();
         getContactList();
+
+        menu = (BottomNavigationView)findViewById(R.id.bottomNavigationView);
+        menu.setSelectedItemId(R.id.friendsMenu);
+        menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.profileMenu:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        break;
+                    case R.id.matchMenu:
+                        startActivity(new Intent(getApplicationContext(), SecondActivity.class));
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     private void createChat(){

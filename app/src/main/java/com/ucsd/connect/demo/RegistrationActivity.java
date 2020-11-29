@@ -95,9 +95,9 @@ public class RegistrationActivity extends AppCompatActivity{
                                 //sendEmailVerification();
                                 sendUserData();
                                 firebaseAuth.signOut();
-                                Toast.makeText(RegistrationActivity.this, "Successfully Registered, Upload complete!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegistrationActivity.this, "To register please complete survey", Toast.LENGTH_SHORT).show();
                                 finish();
-                                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+                                startActivity(new Intent(RegistrationActivity.this, QuestionnaireActivity.class));
                             }else{
                                 Toast.makeText(RegistrationActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                             }
@@ -111,7 +111,7 @@ public class RegistrationActivity extends AppCompatActivity{
         userLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), SecondActivity.class));
             }
         });
 

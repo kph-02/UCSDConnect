@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuestionnaireActivity"
+    android:orientation="vertical"
+    android:background="@drawable/real_background"
+    android:padding="15dp">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Tell us about yourself!"
+    android:layout_gravity="center_horizontal"
+    android:textColor="#FFFFFF"
+    android:textSize="36dp"
+    />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView3"-->
+
+<!--        android:layout_width="318dp"-->
+<!--        android:layout_height="622dp"-->
+
+<!--        app:srcCompat="@drawable/white_background" />-->
+<CheckBox
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#FFFFFF"
+    android:textSize="30dp"
+    android:text="Do you like Question1?"
+    android:id="@+id/question_one"/>
+
+    <CheckBox
+        android:id="@+id/question_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you like Question2?"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:text="Do you like Question3?"
+        android:id="@+id/question_three"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:text="Do you like Question4?"
+        android:id="@+id/question_four"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:text="Do you like Question5?"
+        android:id="@+id/question_five"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:text="Do you like Question6?"
+        android:id="@+id/question_six"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:text="Do you like Question7?"
+        android:id="@+id/question_seven"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:text="Do you like Question8?"
+        android:id="@+id/question_eight"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:text="Do you like Question9?"
+        android:id="@+id/question_nine"/>
+
+    <CheckBox
+        android:id="@+id/question_ten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you like Question10?"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/questionnaire_result"
+        android:layout_width="262dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Enter!"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:layout_gravity="center_horizontal"
+        app:backgroundTint="#032754" />
+
+
+</LinearLayout>

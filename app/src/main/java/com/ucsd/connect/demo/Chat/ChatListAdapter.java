@@ -6,15 +6,22 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 import com.ucsd.connect.demo.ChatActivity;
+import com.ucsd.connect.demo.OtherProfileActivity;
 import com.ucsd.connect.demo.R;
 import com.ucsd.connect.demo.User.UserProfile;
 
@@ -23,6 +30,8 @@ import java.util.ArrayList;
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatListViewHolder> {
 
     ArrayList<ChatObject> chatList;
+    private FirebaseStorage firebaseStorage;
+    private FirebaseAuth firebaseAuth;
 
     public ChatListAdapter(ArrayList<ChatObject> chatList){
         this.chatList = chatList;
@@ -42,20 +51,44 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
     @Override
     public void onBindViewHolder(@NonNull final ChatListViewHolder holder, final int position) {
         String displayName = "";
+        String chatUid = "";
         ChatObject currChat = chatList.get(position);
         for (UserProfile userIt: currChat.getUserProfileArrayList()) {
             if (!userIt.getUid().equals(FirebaseAuth.getInstance().getUid())) {
                 displayName += userIt.getUserName() + " ";
+                chatUid += userIt.getUid();
             }
         }
 
         holder.mTitle.setText(displayName);
 
-        holder.mLayout.setOnClickListener(new View.OnClickListener() {
+        firebaseStorage = FirebaseStorage.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        StorageReference storageReference = firebaseStorage.getReference();
+        storageReference.child(chatUid).child("Images/Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).fit().centerCrop().into(holder.mProfilePic);
+            }
+        });
+
+        holder.mChatName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), ChatActivity.class);
                 intent.putExtra("chatObject", chatList.get(holder.getAdapterPosition()));
+                v.getContext().startActivity(intent);
+            }
+        });
+
+        String finalChatUid = chatUid;
+        holder.mChatPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("test", "clicked");
+                Intent intent = new Intent(v.getContext(), OtherProfileActivity.class);
+                intent.putExtra("chatUid", finalChatUid);
                 v.getContext().startActivity(intent);
             }
         });
@@ -73,10 +106,17 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
     public class ChatListViewHolder extends RecyclerView.ViewHolder{
         public TextView mTitle;
         public LinearLayout mLayout;
+        public ImageView mProfilePic;
+        public LinearLayout mChatName;
+        public LinearLayout mChatPic;
+
         public ChatListViewHolder(View view){
             super(view);
             mTitle = view.findViewById(R.id.title);
             mLayout = view.findViewById(R.id.layout);
+            mProfilePic = view.findViewById(R.id.ProfilePic);
+            mChatName = view.findViewById(R.id.chat_name);
+            mChatPic = view.findViewById(R.id.chat_pic);
         }
     }
 }
