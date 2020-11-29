@@ -14,11 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".QuestionnaireActivity"></activity>
-=======
-        <activity android:name=".MatchActivity"></activity>
->>>>>>> 23ae4145e57600ec93fb6be00c44c539541fc1b3
+        <activity android:name=".test"></activity>
         <activity android:name=".Questionaire_Test" />
         <activity
             android:name=".FindUserActivity"
