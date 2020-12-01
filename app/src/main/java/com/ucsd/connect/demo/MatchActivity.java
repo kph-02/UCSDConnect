@@ -169,7 +169,7 @@ public class MatchActivity extends AppCompatActivity {
         chatInfoDb.updateChildren(newChatMap);
         userDb.child(FirebaseAuth.getInstance().getUid()).child("chat").child(key).setValue(true);
 
-        matchChat = new ChatObject(key, currUser, new ArrayList<UserProfile>(Arrays.asList(currUser, matchUser)));
+        matchChat = new ChatObject(key, currUser, (ArrayList<UserProfile>) Arrays.asList(currUser, matchUser));
 
     }
 
