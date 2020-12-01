@@ -24,6 +24,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -45,6 +46,8 @@ public class ChatActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mChatLayoutManager, mMediaLayoutManager;
 
     ArrayList<MessageObject> messageList;
+    Map<String, String> uidToName;
+
 
     ChatObject mChatObject;
 
@@ -57,7 +60,6 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
         mChatObject = (ChatObject) getIntent().getSerializableExtra("chatObject");
-
         mChatMessagesDb = FirebaseDatabase.getInstance().getReference().child("chat").child(mChatObject.getChatId()).child("messages");
 
         Button mSend = findViewById(R.id.send);
@@ -101,7 +103,7 @@ public class ChatActivity extends AppCompatActivity {
                     if(dataSnapshot.child("media").getChildrenCount() > 0)
                         for (DataSnapshot mediaSnapshot : dataSnapshot.child("media").getChildren())
                             mediaUrlList.add(mediaSnapshot.getValue().toString());
-
+                    getUserName(creatorID);
                     MessageObject mMessage = new MessageObject(dataSnapshot.getKey(), creatorID, text, mediaUrlList);
                     messageList.add(mMessage);
                     mChatLayoutManager.scrollToPosition(messageList.size()-1);
@@ -129,6 +131,27 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
+    DatabaseReference mUserDb;
+
+    private void getUserName(String uid) {
+        if (!uidToName.containsKey(uid)) {
+            uidToName.put(uid, " ");
+            mUserDb = FirebaseDatabase.getInstance().getReference().child("user").child(uid);
+            mUserDb.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    uidToName.put(uid, (String) dataSnapshot.child("userName").getValue());
+                    mChatAdapter.notifyDataSetChanged();
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
+    }
+
     int totalMediaUploaded = 0;
     ArrayList<String> mediaIdList = new ArrayList<>();
     EditText mMessage;
@@ -140,7 +163,7 @@ public class ChatActivity extends AppCompatActivity {
 
         final Map newMessageMap = new HashMap<>();
 
-        newMessageMap.put("creator", mChatObject.getCurrUser().getUid());
+        newMessageMap.put("creator", FirebaseAuth.getInstance().getUid());
 
         if(!mMessage.getText().toString().isEmpty())
             newMessageMap.put("text", mMessage.getText().toString());
@@ -204,12 +227,13 @@ public class ChatActivity extends AppCompatActivity {
 
     private void initializeMessage() {
         messageList = new ArrayList<>();
+        uidToName = new HashMap<String, String>();
         mChat= findViewById(R.id.messageList);
         mChat.setNestedScrollingEnabled(false);
         mChat.setHasFixedSize(false);
         mChatLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayout.VERTICAL, false);
         mChat.setLayoutManager(mChatLayoutManager);
-        mChatAdapter = new MessageAdapter(messageList);
+        mChatAdapter = new MessageAdapter(messageList, uidToName);
         mChat.setAdapter(mChatAdapter);
     }
 

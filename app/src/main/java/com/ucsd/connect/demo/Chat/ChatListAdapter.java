@@ -54,7 +54,10 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
         String chatUid = "";
         ChatObject currChat = chatList.get(position);
         for (UserProfile userIt: currChat.getUserProfileArrayList()) {
+            Log.d("test", "ehe" + userIt.getUid());
+            Log.d("test", "curr:" + FirebaseAuth.getInstance().getUid());
             if (!userIt.getUid().equals(FirebaseAuth.getInstance().getUid())) {
+                Log.d("test", "in if");
                 displayName += userIt.getUserName() + " ";
                 chatUid += userIt.getUid();
             }
@@ -64,7 +67,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
 
         firebaseStorage = FirebaseStorage.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
-
+        Log.d("test", "chatUid" + chatUid);
         StorageReference storageReference = firebaseStorage.getReference();
         storageReference.child(chatUid).child("Images/Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override

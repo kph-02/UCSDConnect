@@ -17,7 +17,11 @@ import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -25,14 +29,19 @@ import com.ucsd.connect.demo.R;
 import com.stfalcon.frescoimageviewer.ImageViewer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder> {
 
     ArrayList<MessageObject> messageList;
+    Map<String, String> uidToName;
     FirebaseStorage firebaseStorage;
+    DatabaseReference mUserDb;
 
-    public MessageAdapter(ArrayList<MessageObject> messageList){
+    public MessageAdapter(ArrayList<MessageObject> messageList, Map<String, String> uidToName){
         this.messageList = messageList;
+        this.uidToName = uidToName;
     }
 
     @NonNull
@@ -49,17 +58,21 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     @Override
     public void onBindViewHolder(@NonNull final MessageViewHolder holder, final int position) {
         holder.mMessage.setText(messageList.get(position).getMessage());
-        holder.mSender.setText(messageList.get(position).getSenderId());
+
+
+        holder.mSender.setText(uidToName.get(messageList.get(position).getSenderId()));
 
         firebaseStorage = FirebaseStorage.getInstance();
 
-        StorageReference storageReference = firebaseStorage.getReference();
-        storageReference.child(messageList.get(position).getSenderId()).child("Images/Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).fit().centerCrop().into(holder.mImage);
-            }
-        });
+        if (messageList.get(position).getSenderId() != null && messageList.get(position).getSenderId() != "") {
+            StorageReference storageReference = firebaseStorage.getReference();
+            storageReference.child(messageList.get(position).getSenderId()).child("Images/Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    Picasso.get().load(uri).fit().centerCrop().into(holder.mImage);
+                }
+            });
+        }
 
         if(messageList.get(holder.getAdapterPosition()).getMediaUrlList().isEmpty())
             holder.mViewMedia.setVisibility(View.GONE);
