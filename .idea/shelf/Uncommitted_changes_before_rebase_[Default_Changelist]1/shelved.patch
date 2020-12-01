@@ -1,0 +1,24 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    package=\"com.ucsd.connect.demo\">\n\n    <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />\n    <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />\n    <uses-permission android:name=\"android.permission.READ_CONTACTS\" />\n    <uses-permission android:name=\"android.permission.WRITE_CONTACTS\" />\n\n    <application\n        android:allowBackup=\"true\"\n        android:icon=\"@mipmap/ic_launcher\"\n        android:label=\"@string/app_name\"\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/AppTheme\">\n        <activity android:name=\".test\"></activity>\n        <activity android:name=\".Questionaire_Test\" />\n        <activity\n            android:name=\".FindUserActivity\"\n            android:label=\"@string/title_activity_find_user\"\n            android:theme=\"@style/AppTheme\" />\n        <activity android:name=\".MainActivity\" />\n        <activity android:name=\".SplashSceen\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n        </activity>\n        <activity android:name=\".SecondActivity\" />\n        <activity android:name=\".RegistrationActivity\" />\n        <activity android:name=\".PasswordActivity\" />\n        <activity android:name=\".ProfileActivity\" />\n        <activity android:name=\".OtherProfileActivity\" />\n        <activity android:name=\".UpdateProfile\" />\n        <activity android:name=\".UpdatePassword\" />\n        <activity android:name=\".ContactPageActivity\" />\n        <activity android:name=\".ChatActivity\" />\n    </application>\n\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision ed93125917c12617ab5373009add298e0155e948)
++++ app/src/main/AndroidManifest.xml	(date 1606624779000)
+@@ -7,6 +7,7 @@
+     <uses-permission android:name="android.permission.READ_CONTACTS" />
+     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+ 
++
+     <application
+         android:allowBackup="true"
+         android:icon="@mipmap/ic_launcher"
+@@ -39,4 +40,5 @@
+         <activity android:name=".ChatActivity" />
+     </application>
+ 
++
+ </manifest>
+\ No newline at end of file

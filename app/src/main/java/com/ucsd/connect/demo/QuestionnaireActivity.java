@@ -18,7 +18,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class QuestionnaireActivity extends AppCompatActivity {
-    private CheckBox question1, question2, question3, question4, question5, question6, question7, question8, question9, question10;
+
+    private Button question1, question2, question3, question4, question5, question6, question7, question8, question9, question10;
     private Button getAnswersButton;
     private List<String> results;
     private FirebaseDatabase firebaseDatabase;
@@ -31,32 +32,36 @@ public class QuestionnaireActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionnaire);
         question1 = findViewById(R.id.question_one);
-        question2 = findViewById(R.id.question_two);
-        question3 = findViewById(R.id.question_three);
-        question4 = findViewById(R.id.question_four);
-        question5 = findViewById(R.id.question_five);
-        question6 = findViewById(R.id.question_six);
-        question7 = findViewById(R.id.question_seven);
-        question8 = findViewById(R.id.question_eight);
-        question9 = findViewById(R.id.question_nine);
-        question10 = findViewById(R.id.question_ten);
+//        question2 = findViewById(R.id.question_two);
+//        question3 = findViewById(R.id.question_three);
+//        question4 = findViewById(R.id.question_four);
+//        question5 = findViewById(R.id.question_five);
+//        question6 = findViewById(R.id.question_six);
+//        question7 = findViewById(R.id.question_seven);
+//        question8 = findViewById(R.id.question_eight);
+//        question9 = findViewById(R.id.question_nine);
+//        question10 = findViewById(R.id.question_ten);
         getAnswersButton = findViewById(R.id.questionnaire_result);
         stringResults = "";
         results = new ArrayList<>();
         question1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (question1.isChecked()) {
+                if (question1.isClickable()) {
                     results.add("Raccoons");
+                    question1.setBackgroundColor(111111);
+                    question1.setText("Yes!");
                 } else {
                     results.remove("Raccoons");
+                    question1.setBackgroundColor(003667);
+                    question1.setText("Do you like raccoons?");
                 }
             }
         });
         question2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (question2.isChecked()) {
+                if (question2.isClickable()) {
                     results.add("Bad Taste-Buds");
                 } else {
                     results.remove("Bad Taste-Buds");
@@ -66,7 +71,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         question3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (question1.isChecked()) {
+                if (question3.isClickable()) {
                     results.add("Religious");
                 } else {
                     results.remove("Religious");
@@ -76,7 +81,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         question4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (question3.isChecked()) {
+                if (question4.isClickable()) {
                     results.add("Fitness");
                 } else {
                     results.remove("Fitness");
@@ -86,7 +91,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         question5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (question4.isChecked()) {
+                if (question5.isClickable()) {
                     results.add("Gamer");
                 } else {
                     results.remove("Gamer");
@@ -96,7 +101,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         question6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (question1.isChecked()) {
+                if (question6.isClickable()) {
                     results.add("Weeb");
                 } else {
                     results.remove("Weeb");
@@ -106,7 +111,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         question7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (question7.isChecked()) {
+                if (question7.isClickable()) {
                     results.add("Boba-holic");
                 } else {
                     results.remove("Boba-holic");
@@ -116,7 +121,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         question8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (question8.isChecked()) {
+                if (question8.isClickable()) {
                     results.add("IEEE");
                 } else {
                     results.remove("IEEE");
@@ -127,7 +132,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (question8.isChecked()) {
+                if (question9.isClickable()) {
 
                     results.add("STEM");
                 } else {
@@ -138,7 +143,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         question10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (question10.isChecked()) {
+                if (question10.isClickable()) {
                     results.add("Depressed");
                 } else {
                     results.remove("Depressed");
