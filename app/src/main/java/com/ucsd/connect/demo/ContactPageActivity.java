@@ -59,7 +59,7 @@ public class ContactPageActivity extends AppCompatActivity {
 
         Fresco.initialize(this);
 
-        Button mLogout = findViewById(R.id.logout);
+        //Button mLogout = findViewById(R.id.logout);
         Button mFindUser = findViewById(R.id.findUser);
         mFindUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,18 +67,19 @@ public class ContactPageActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), FindUserActivity.class));
             }
         });
-        mLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OneSignal.setSubscription(false);
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-                return;
-            }
-        });
+
+//        mLogout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                OneSignal.setSubscription(false);
+//                FirebaseAuth.getInstance().signOut();
+//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(intent);
+//                finish();
+//                return;
+//            }
+//        });
 
         getPermissions();
         initializeRecyclerView();
@@ -145,7 +146,9 @@ public class ContactPageActivity extends AppCompatActivity {
                         UserProfile mUser = new UserProfile(userSnapshot.getKey());
                         getUserData(mUser);
                         mChat.addUserToArrayList(mUser);
-                        mChat.getCurrUser().setUid(currUid);
+                        if (!userSnapshot.getKey().equals(currUid)) {
+                            mChat.setOtherUser(mUser);
+                        }
                     }
 
                 }

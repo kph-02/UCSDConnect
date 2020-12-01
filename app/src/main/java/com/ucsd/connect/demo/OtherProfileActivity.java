@@ -49,7 +49,7 @@ public class OtherProfileActivity extends AppCompatActivity {
         profileAge = findViewById(R.id.tvProfileAge);
         profileEmail = findViewById(R.id.tvProfileEmail);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();

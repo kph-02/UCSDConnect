@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.onesignal.OneSignal;
 import com.squareup.picasso.Picasso;
 import com.ucsd.connect.demo.User.UserProfile;
 
@@ -32,7 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private ImageView profilePic;
     private TextView profileName, profileAge, profileEmail;
-    private Button profileUpdate, changePassword;
+    private Button profileUpdate, changePassword, profileLogout;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseStorage firebaseStorage;
@@ -49,6 +50,8 @@ public class ProfileActivity extends AppCompatActivity {
         profileEmail = findViewById(R.id.tvProfileEmail);
         profileUpdate = findViewById(R.id.btnProfileUpdate);
         changePassword = findViewById(R.id.btnChangePassword);
+        profileLogout = findViewById(R.id.btnProfileLogout);
+
 
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -92,6 +95,19 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ProfileActivity.this, UpdatePassword.class));
+            }
+        });
+
+        profileLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OneSignal.setSubscription(false);
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+                return;
             }
         });
 

@@ -64,15 +64,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
         firebaseStorage = FirebaseStorage.getInstance();
 
-        if (messageList.get(position).getSenderId() != null && messageList.get(position).getSenderId() != "") {
-            StorageReference storageReference = firebaseStorage.getReference();
-            storageReference.child(messageList.get(position).getSenderId()).child("Images/Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    Picasso.get().load(uri).fit().centerCrop().into(holder.mImage);
-                }
-            });
-        }
+        StorageReference storageReference = firebaseStorage.getReference();
+        storageReference.child(messageList.get(position).getSenderId()).child("Images/Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).fit().centerCrop().into(holder.mImage);
+            }
+        });
+
 
         if(messageList.get(holder.getAdapterPosition()).getMediaUrlList().isEmpty())
             holder.mViewMedia.setVisibility(View.GONE);

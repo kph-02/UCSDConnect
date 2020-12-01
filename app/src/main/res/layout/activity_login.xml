@@ -23,7 +23,7 @@
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/ic_action_username"
         android:elevation="10dp"
-        android:hint="Username"
+        android:hint="Email"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textPersonName"
