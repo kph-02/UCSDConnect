@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class ChatObject implements Serializable {
     private String chatId;
-    private UserProfile currUser = new UserProfile();
+    private UserProfile otherUser = new UserProfile();
 
     private ArrayList<UserProfile> UserProfileArrayList = new ArrayList<>();
 
@@ -17,7 +17,7 @@ public class ChatObject implements Serializable {
 
     public ChatObject(String chatId, UserProfile currUser, ArrayList<UserProfile> UserProfileArrayList){
         this.chatId = chatId;
-        this.currUser = currUser;
+        this.otherUser = otherUser;
         this.UserProfileArrayList = UserProfileArrayList;
     }
 
@@ -32,11 +32,11 @@ public class ChatObject implements Serializable {
         UserProfileArrayList.add(mUser);
     }
 
-    public UserProfile getCurrUser() {
-        return currUser;
+    public UserProfile getOtherUser() {
+        return otherUser;
     }
 
-    public void setCurrUser(UserProfile user) {
-        this.currUser = user;
+    public void setOtherUser(UserProfile user) {
+        this.otherUser = user;
     }
 }

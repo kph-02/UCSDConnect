@@ -145,7 +145,9 @@ public class ContactPageActivity extends AppCompatActivity {
                         UserProfile mUser = new UserProfile(userSnapshot.getKey());
                         getUserData(mUser);
                         mChat.addUserToArrayList(mUser);
-                        mChat.getCurrUser().setUid(currUid);
+                        if (!userSnapshot.getKey().equals(currUid)) {
+                            mChat.setOtherUser(mUser);
+                        }
                     }
 
                 }

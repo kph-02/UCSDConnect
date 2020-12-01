@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 import com.ucsd.connect.demo.Chat.ChatObject;
 import com.ucsd.connect.demo.Chat.MediaAdapter;
 import com.ucsd.connect.demo.Chat.MessageAdapter;
@@ -44,6 +46,8 @@ public class ChatActivity extends AppCompatActivity {
     private RecyclerView mChat, mMedia;
     private RecyclerView.Adapter mChatAdapter, mMediaAdapter;
     private RecyclerView.LayoutManager mChatLayoutManager, mMediaLayoutManager;
+    private ImageView mChatProf;
+    private TextView mChatName;
 
     ArrayList<MessageObject> messageList;
     Map<String, String> uidToName;
@@ -52,6 +56,7 @@ public class ChatActivity extends AppCompatActivity {
     ChatObject mChatObject;
 
     DatabaseReference mChatMessagesDb;
+    FirebaseStorage firebaseStorage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +83,18 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
+        mChatProf = findViewById(R.id.chatProf);
+        mChatName = findViewById(R.id.chatName);
+
+        mChatName.setText(mChatObject.getOtherUser().getUserName());
+        firebaseStorage = FirebaseStorage.getInstance();
+        StorageReference storageReference = firebaseStorage.getReference();
+        storageReference.child(mChatObject.getOtherUser().getUid()).child("Images/Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).fit().centerCrop().into(mChatProf);
+            }
+        });
 
         initializeMessage();
         initializeMedia();
