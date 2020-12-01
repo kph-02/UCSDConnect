@@ -12,7 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="serif"
+        android:fontFamily="@font/montserrat_medium"
         android:gravity="center_horizontal"
         android:text="@string/UCSD_Connect"
         android:textColor="#FFFFFF"

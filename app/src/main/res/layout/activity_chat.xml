@@ -7,6 +7,12 @@
     tools:context=".ChatActivity"
     android:background="#ffffff">
 
+    <ImageView
+        android:background="@drawable/real_background"
+        android:alpha="0.25"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <LinearLayout
         android:id="@+id/User"
         android:layout_width="match_parent"
