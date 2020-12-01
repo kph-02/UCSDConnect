@@ -35,7 +35,7 @@
             android:id="@+id/chatName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Darin Tsui"
+            android:text="Init"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
 
