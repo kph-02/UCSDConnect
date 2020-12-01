@@ -236,6 +236,7 @@ public class MatchActivity extends AppCompatActivity {
         //String[] traits = getResources().getStringArray(R.array.matchTraits);
         //String[] traits = {"Question1","Question2","Question3","Question4","Question5","Question6","Question7","Question8","Question9","Question10" };
         //Log.d("test", Arrays.toString(traits));
+        final String[] allTraits = getResources().getStringArray(R.array.allTraits);
         final TypedArray colors = getResources().obtainTypedArray(R.array.colors);
         final TypedArray images = getResources().obtainTypedArray(R.array.images);
 
@@ -243,14 +244,16 @@ public class MatchActivity extends AppCompatActivity {
         picker.setAdapter(new BubblePickerAdapter() {
             @Override
             public int getTotalCount() {
-                return similarTraits.size();
+                return allTraits.length;
+                // return similarTraits.size();
             }
 
             @NotNull
             @Override
             public PickerItem getItem(int position) {
                 PickerItem item = new PickerItem();
-                item.setTitle(similarTraits.get(position));
+                //item.setTitle(similarTraits.get(position));
+                item.setTitle(allTraits[position]);
                 item.setGradient(new BubbleGradient(colors.getColor((position * 2) % 8, 0),
                         colors.getColor((position * 2) % 8 + 1, 0), BubbleGradient.VERTICAL));
                 //item.setTypeface(mediumTypeface);
