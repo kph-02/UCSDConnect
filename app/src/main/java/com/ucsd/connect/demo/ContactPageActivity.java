@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -120,8 +121,8 @@ public class ContactPageActivity extends AppCompatActivity {
                        }
                        if (exists)
                            continue;
+                       getChatData(mChat);
                        chatList.add(mChat);
-                       getChatData(mChat.getChatId());
                    }
                }
             }
@@ -133,27 +134,22 @@ public class ContactPageActivity extends AppCompatActivity {
         });
     }
 
-    private void getChatData(String chatId) {
-        DatabaseReference mChatDB = FirebaseDatabase.getInstance().getReference().child("chat").child(chatId).child("info");
+    private void getChatData(ChatObject mChat) {
+        DatabaseReference mChatDB = FirebaseDatabase.getInstance().getReference().child("chat").child(mChat.getChatId()).child("info");
         mChatDB.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String chatId = "";
-
-                    if(dataSnapshot.child("id").getValue() != null)
-                        chatId = dataSnapshot.child("id").getValue().toString();
 
                     for(DataSnapshot userSnapshot : dataSnapshot.child("users").getChildren()){
-                        for(ChatObject mChat : chatList){
-                            if(mChat.getChatId().equals(chatId)){
-                                UserProfile mUser = new UserProfile(userSnapshot.getKey());
-                                mChat.addUserToArrayList(mUser);
-                                mChat.getCurrUser().setUid(currUid);
-                                getUserData(mUser);
-                            }
+                        UserProfile mUser = new UserProfile(userSnapshot.getKey());
+                        getUserData(mUser);
+                        mChat.addUserToArrayList(mUser);
+                        if (!userSnapshot.getKey().equals(currUid)) {
+                            mChat.setOtherUser(mUser);
                         }
                     }
+
                 }
             }
 
@@ -170,23 +166,8 @@ public class ContactPageActivity extends AppCompatActivity {
         mUserDb.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String userName = dataSnapshot.child("userName").getValue().toString();
-                UserProfile mUser = new UserProfile(dataSnapshot.getKey());
-
-                if(dataSnapshot.child("notificationKey").getValue() != null)
-                    mUser.setNotificationKey(dataSnapshot.child("notificationKey").getValue().toString());
-
-                for(ChatObject mChat : chatList){
-                    for (UserProfile mUserIt : mChat.getUserProfileArrayList()){
-                        if(mUserIt.getUid().equals(mUser.getUid())){
-                            mUserIt.setNotificationKey(mUser.getNotificationKey());
-                            mUserIt.setUserName(userName);
-                            if (mUserIt.getUid().equals(currUid)) {
-                                mChat.getCurrUser().setUserName(userName);
-                            }
-                        }
-                    }
-                }
+                mUser.setUserName((String)dataSnapshot.child("userName").getValue());
+                Log.d("test", mUser.getUid());
                 mChatListAdapter.notifyDataSetChanged();
             }
 

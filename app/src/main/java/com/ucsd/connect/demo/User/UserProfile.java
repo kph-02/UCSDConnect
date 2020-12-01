@@ -93,5 +93,13 @@ public class UserProfile implements Serializable {
         return traits;
     }
 
+    public void copy(UserProfile otherUser) {
+        this.uid = otherUser.getUid();
+        this.userAge = otherUser.getUserAge();
+        this.userEmail = otherUser.getUserEmail();
+        this.userName = otherUser.getUserName();
+        this.traits = otherUser.getTraits();
+    }
+
 
 }

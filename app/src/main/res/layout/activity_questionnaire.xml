@@ -1,121 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QuestionnaireActivity"
     android:orientation="vertical"
-    android:background="@drawable/real_background"
+    android:background="@color/Blue"
     android:padding="15dp">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Tell us about yourself!"
-    android:layout_gravity="center_horizontal"
-    android:textColor="#FFFFFF"
-    android:textSize="36dp"
-    />
 
-<!--    <ImageView-->
+    <!--    <ImageView-->
 <!--        android:id="@+id/imageView3"-->
 
 <!--        android:layout_width="318dp"-->
 <!--        android:layout_height="622dp"-->
 
 <!--        app:srcCompat="@drawable/white_background" />-->
-<CheckBox
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textColor="#FFFFFF"
-    android:textSize="30dp"
-    android:text="Do you like raccoons?"
-    android:id="@+id/question_one"/>
 
-    <CheckBox
-        android:id="@+id/question_two"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Do you like on-campus food?"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp" />
+ =
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:text="Are you religious?"
-        android:id="@+id/question_three"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:text="Do you workout?"
-        android:id="@+id/question_four"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:text="Do you game?"
-        android:id="@+id/question_five"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:text="Do you watch anime?
-"
-        android:id="@+id/question_six"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:text="Do you like boba?"
-        android:id="@+id/question_seven"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:text="Are you a member of IEEE?"
-        android:id="@+id/question_eight"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:text="Are you a STEM major?"
-        android:id="@+id/question_nine"/>
+   <TextView
+       android:id="@+id/textView3"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center_horizontal"
+       android:fontFamily="@font/poppins_bold"
+       android:text="Tell us about yourself..."
+       android:textColor="#FFFFFF"
+       android:textSize="30dp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.488"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/question_ten"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Are you depressed?"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp" />
+   <ImageView
+       android:id="@+id/imageView"
+       android:layout_width="326dp"
+       android:layout_height="641dp"
 
-    <Button
-        android:id="@+id/questionnaire_result"
-        android:layout_width="262dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="28dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/textView3"
+       app:srcCompat="@drawable/white_background" />
+
+   <Button
+
+        android:id="@+id/question_seven"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/btn_bg"
         android:fontFamily="@font/poppins_medium"
-        android:text="Enter!"
+        android:text="Do you like boba?"
         android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:layout_gravity="center_horizontal"
-        app:backgroundTint="#032754" />
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/question_six" />
 
+    <Button
 
-</LinearLayout>
+        android:id="@+id/question_one"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Do you like raccoons?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <Button
+
+        android:id="@+id/question_two"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Do you like on-campus food?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/question_one" />
+
+    <Button
+
+        android:id="@+id/question_eight"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Are you a member of IEEE?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/question_seven" />
+
+    <Button
+
+        android:id="@+id/question_nine"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Are you a STEM major?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/question_eight" />
+
+    <Button
+
+        android:id="@+id/question_ten"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Are you depressed?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/question_nine" />
+
+    <Button
+
+        android:id="@+id/question_three"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Are you religious?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/question_two" />
+
+    <Button
+
+        android:id="@+id/question_four"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Do you workout?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/question_three" />
+
+    <Button
+
+        android:id="@+id/question_five"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Do you game?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/question_four" />
+
+    <Button
+
+        android:id="@+id/question_six"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="280dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Do you watch anime?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+   <Button
+       android:id="@+id/questionnaire_result"
+       android:layout_width="262dp"
+       android:layout_height="70dp"
+       android:layout_gravity="center_horizontal"
+       android:layout_marginTop="12dp"
+       android:background="@drawable/btn_bg"
+       android:fontFamily="@font/poppins_medium"
+       android:text="Enter!"
+       android:textAllCaps="false"
+       android:textColor="@color/white"
+       android:textSize="30sp"
+       app:backgroundTint="#032754"
+       app:layout_constraintBottom_toBottomOf="@+id/imageView"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.496"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/question_ten"
+       app:layout_constraintVertical_bias="0.142" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

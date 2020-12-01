@@ -1,0 +1,276 @@
+Index: .idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_15_0_2_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\n  <library name=\"Gradle: com.google.firebase:firebase-analytics-impl:15.0.2@aar\">\n    <CLASSES>\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-impl-15.0.2.aar/1caa40d3d0336de8ed0439e7f35f6719/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-impl-15.0.2.aar/fe40602f1b12342a92ad00529c1907b0/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-impl-15.0.2.aar/66e0405079492149e0ec47ccebfae5d2/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-impl-15.0.2.aar/66e0405079492149e0ec47ccebfae5d2/AndroidManifest.xml\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-impl-15.0.2.aar/66e0405079492149e0ec47ccebfae5d2/jars/classes.jar!/\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-impl-15.0.2.aar/f8673eebc88c43585d971b91879b125c/res\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6493b8a6247fde89d7f70d83d256e31d/jetified-firebase-analytics-impl-15.0.2/jars/classes.jar!/\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6493b8a6247fde89d7f70d83d256e31d/jetified-firebase-analytics-impl-15.0.2/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6493b8a6247fde89d7f70d83d256e31d/jetified-firebase-analytics-impl-15.0.2/AndroidManifest.xml\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2dc86bd67c1138d47c72077c09a44589/jetified-firebase-analytics-impl-15.0.2/AndroidManifest.xml\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2dc86bd67c1138d47c72077c09a44589/jetified-firebase-analytics-impl-15.0.2/res\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2dc86bd67c1138d47c72077c09a44589/jetified-firebase-analytics-impl-15.0.2/jars/classes.jar!/\" />\n    </CLASSES>\n    <JAVADOC />\n    <SOURCES />\n  </library>\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_15_0_2_aar.xml	(revision e908f2e73ea1e768667c88a0d6ff691564c2d12b)
++++ .idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_15_0_2_aar.xml	(date 1606026258000)
+@@ -7,12 +7,13 @@
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-impl-15.0.2.aar/66e0405079492149e0ec47ccebfae5d2/AndroidManifest.xml" />
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-impl-15.0.2.aar/66e0405079492149e0ec47ccebfae5d2/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-impl-15.0.2.aar/f8673eebc88c43585d971b91879b125c/res" />
+-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6493b8a6247fde89d7f70d83d256e31d/jetified-firebase-analytics-impl-15.0.2/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6493b8a6247fde89d7f70d83d256e31d/jetified-firebase-analytics-impl-15.0.2/res" />
+-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6493b8a6247fde89d7f70d83d256e31d/jetified-firebase-analytics-impl-15.0.2/AndroidManifest.xml" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2dc86bd67c1138d47c72077c09a44589/jetified-firebase-analytics-impl-15.0.2/AndroidManifest.xml" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2dc86bd67c1138d47c72077c09a44589/jetified-firebase-analytics-impl-15.0.2/res" />
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2dc86bd67c1138d47c72077c09a44589/jetified-firebase-analytics-impl-15.0.2/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/97866697fdc7fd96099d316f9e27ac20/jetified-firebase-analytics-impl-15.0.2/res" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/97866697fdc7fd96099d316f9e27ac20/jetified-firebase-analytics-impl-15.0.2/AndroidManifest.xml" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/97866697fdc7fd96099d316f9e27ac20/jetified-firebase-analytics-impl-15.0.2/jars/classes.jar!/" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />
+Index: .idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\n  <library name=\"Gradle: com.squareup.picasso:picasso:2.71828@aar\">\n    <CLASSES>\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/49782979648a1f921418855ed9cf47e4/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/ddc0490f259cbcd4ddf63654a9c53a04/res\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/e463f2e2da86d3908bc907fc5371512b/jars/classes.jar!/\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/e463f2e2da86d3908bc907fc5371512b/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/e463f2e2da86d3908bc907fc5371512b/AndroidManifest.xml\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/eefeedacc9a3e3753358a592862c67da/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a5f60f1ceebf8b9660399847cf32b134/jetified-picasso-2.71828/AndroidManifest.xml\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a5f60f1ceebf8b9660399847cf32b134/jetified-picasso-2.71828/jars/classes.jar!/\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a5f60f1ceebf8b9660399847cf32b134/jetified-picasso-2.71828/res\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/514fbe228e412b48978cb3f1b730c9b1/jetified-picasso-2.71828/jars/classes.jar!/\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/514fbe228e412b48978cb3f1b730c9b1/jetified-picasso-2.71828/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/514fbe228e412b48978cb3f1b730c9b1/jetified-picasso-2.71828/AndroidManifest.xml\" />\n    </CLASSES>\n    <JAVADOC>\n      <root url=\"jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.71828/2843564e6bac90b1e125104d7c842c87a96a8ee9/picasso-2.71828-javadoc.jar!/\" />\n    </JAVADOC>\n    <SOURCES>\n      <root url=\"jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.71828/41874e20a4d17fd4ad2052ac217073e14d00c910/picasso-2.71828-sources.jar!/\" />\n    </SOURCES>\n  </library>\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml	(revision e908f2e73ea1e768667c88a0d6ff691564c2d12b)
++++ .idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml	(date 1606026258000)
+@@ -7,12 +7,13 @@
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/e463f2e2da86d3908bc907fc5371512b/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/e463f2e2da86d3908bc907fc5371512b/AndroidManifest.xml" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-picasso-2.71828.aar/eefeedacc9a3e3753358a592862c67da/res" />
+-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a5f60f1ceebf8b9660399847cf32b134/jetified-picasso-2.71828/AndroidManifest.xml" />
+-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a5f60f1ceebf8b9660399847cf32b134/jetified-picasso-2.71828/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a5f60f1ceebf8b9660399847cf32b134/jetified-picasso-2.71828/res" />
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/514fbe228e412b48978cb3f1b730c9b1/jetified-picasso-2.71828/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/514fbe228e412b48978cb3f1b730c9b1/jetified-picasso-2.71828/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/514fbe228e412b48978cb3f1b730c9b1/jetified-picasso-2.71828/AndroidManifest.xml" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/788decf37e7ea9eaa7477695eed26e9f/jetified-picasso-2.71828/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/788decf37e7ea9eaa7477695eed26e9f/jetified-picasso-2.71828/res" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/788decf37e7ea9eaa7477695eed26e9f/jetified-picasso-2.71828/AndroidManifest.xml" />
+     </CLASSES>
+     <JAVADOC>
+       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.71828/2843564e6bac90b1e125104d7c842c87a96a8ee9/picasso-2.71828-javadoc.jar!/" />
+Index: .idea/libraries/Gradle__com_google_firebase_firebase_analytics_15_0_2_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\n  <library name=\"Gradle: com.google.firebase:firebase-analytics:15.0.2@aar\">\n    <CLASSES>\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-15.0.2.aar/a9446d68ab3be533b262bf0371a7b455/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-15.0.2.aar/066ac8b01dd1d3496900878cb8405127/res\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-15.0.2.aar/5eaa949cc8b56198ab4d1fb1aa7c25cd/jars/classes.jar!/\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-15.0.2.aar/5eaa949cc8b56198ab4d1fb1aa7c25cd/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-15.0.2.aar/5eaa949cc8b56198ab4d1fb1aa7c25cd/AndroidManifest.xml\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-15.0.2.aar/0b08d0da8c0896ef9637ea56d68126f2/res\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bb4b90b4e6326efb50f392646fa65020/jetified-firebase-analytics-15.0.2/jars/classes.jar!/\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bb4b90b4e6326efb50f392646fa65020/jetified-firebase-analytics-15.0.2/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bb4b90b4e6326efb50f392646fa65020/jetified-firebase-analytics-15.0.2/AndroidManifest.xml\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45a0169eeb00b4aaea9f489b6727ea56/jetified-firebase-analytics-15.0.2/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45a0169eeb00b4aaea9f489b6727ea56/jetified-firebase-analytics-15.0.2/AndroidManifest.xml\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45a0169eeb00b4aaea9f489b6727ea56/jetified-firebase-analytics-15.0.2/jars/classes.jar!/\" />\n    </CLASSES>\n    <JAVADOC />\n    <SOURCES />\n  </library>\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_firebase_firebase_analytics_15_0_2_aar.xml	(revision e908f2e73ea1e768667c88a0d6ff691564c2d12b)
++++ .idea/libraries/Gradle__com_google_firebase_firebase_analytics_15_0_2_aar.xml	(date 1606026258000)
+@@ -7,12 +7,13 @@
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-15.0.2.aar/5eaa949cc8b56198ab4d1fb1aa7c25cd/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-15.0.2.aar/5eaa949cc8b56198ab4d1fb1aa7c25cd/AndroidManifest.xml" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-analytics-15.0.2.aar/0b08d0da8c0896ef9637ea56d68126f2/res" />
+-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bb4b90b4e6326efb50f392646fa65020/jetified-firebase-analytics-15.0.2/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bb4b90b4e6326efb50f392646fa65020/jetified-firebase-analytics-15.0.2/res" />
+-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bb4b90b4e6326efb50f392646fa65020/jetified-firebase-analytics-15.0.2/AndroidManifest.xml" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45a0169eeb00b4aaea9f489b6727ea56/jetified-firebase-analytics-15.0.2/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45a0169eeb00b4aaea9f489b6727ea56/jetified-firebase-analytics-15.0.2/AndroidManifest.xml" />
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/45a0169eeb00b4aaea9f489b6727ea56/jetified-firebase-analytics-15.0.2/jars/classes.jar!/" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9ae4e56175d81c71373a73f505bd9af3/jetified-firebase-analytics-15.0.2/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9ae4e56175d81c71373a73f505bd9af3/jetified-firebase-analytics-15.0.2/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9ae4e56175d81c71373a73f505bd9af3/jetified-firebase-analytics-15.0.2/res" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />
+Index: app/src/main/res/layout/activity_second.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\"com.ucsd.connect.demo.SecondActivity\">\n\n\n    <TextView\n        android:id=\"@+id/textView\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginBottom=\"8dp\"\n        android:layout_marginLeft=\"8dp\"\n        android:layout_marginRight=\"8dp\"\n        android:layout_marginTop=\"8dp\"\n        android:text=\"This is Second Activity\"\n        android:textSize=\"32sp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintLeft_toLeftOf=\"parent\"\n        app:layout_constraintRight_toRightOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:layout_constraintVertical_bias=\"0.303\" />\n\n    <Button\n        android:id=\"@+id/btnLogout\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginBottom=\"8dp\"\n        android:layout_marginEnd=\"8dp\"\n        android:layout_marginStart=\"8dp\"\n        android:layout_marginTop=\"8dp\"\n        android:text=\"Logout\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/textView\"\n        app:layout_constraintVertical_bias=\"0.484\" />\n\n</androidx.constraintlayout.widget.ConstraintLayout>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_second.xml	(revision e908f2e73ea1e768667c88a0d6ff691564c2d12b)
++++ app/src/main/res/layout/activity_second.xml	(date 1606529727000)
+@@ -1,41 +1,101 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
++    android:background="@drawable/real_background"
+     tools:context="com.ucsd.connect.demo.SecondActivity">
+ 
++    <ScrollView
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content">
+ 
+-    <TextView
+-        android:id="@+id/textView"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginBottom="8dp"
+-        android:layout_marginLeft="8dp"
+-        android:layout_marginRight="8dp"
+-        android:layout_marginTop="8dp"
+-        android:text="This is Second Activity"
+-        android:textSize="32sp"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintLeft_toLeftOf="parent"
+-        app:layout_constraintRight_toRightOf="parent"
+-        app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.303" />
++        <LinearLayout
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:orientation="vertical">
+ 
+-    <Button
+-        android:id="@+id/btnLogout"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginBottom="8dp"
+-        android:layout_marginEnd="8dp"
+-        android:layout_marginStart="8dp"
+-        android:layout_marginTop="8dp"
+-        android:text="Logout"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/textView"
+-        app:layout_constraintVertical_bias="0.484" />
++            <Button
++                android:layout_width="wrap_content"
++                android:layout_height="100dp"
++></Button>
++            <Button
++                android:layout_width="wrap_content"
++                android:layout_height="100dp"
++                ></Button>
++
++            <Button
++                android:layout_width="wrap_content"
++                android:layout_height="100dp"></Button>
++
++            <Button
++                android:layout_width="wrap_content"
++                android:layout_height="100dp"
++                ></Button>  <Button
++            android:layout_width="wrap_content"
++            android:layout_height="100dp"
++            ></Button>  <Button
++            android:layout_width="wrap_content"
++            android:layout_height="100dp"
++            ></Button>
++            <Button
++                android:layout_width="wrap_content"
++                android:layout_height="100dp"
++                ></Button>
++            <Button
++                android:layout_width="wrap_content"
++                android:layout_height="100dp"
++                ></Button>
++            v
++            <Button
++                android:layout_width="wrap_content"
++                android:layout_height="100dp"
++                ></Button>  <Button
++            android:layout_width="wrap_content"
++            android:layout_height="100dp"
++            ></Button>
++            <Button
++                android:layout_width="wrap_content"
++                android:layout_height="100dp"
++                ></Button>  <Button
++            android:layout_width="wrap_content"
++            android:layout_height="100dp"
++            ></Button>
++
++
++
++            <Button
++                android:id="@+id/btnLogout"
++                android:layout_width="262dp"
++                android:layout_height="70dp"
++                android:layout_alignParentStart="true"
++                android:layout_alignParentLeft="true"
++                android:layout_alignParentEnd="true"
++                android:layout_alignParentRight="true"
++                android:layout_alignParentBottom="true"
++                android:layout_marginStart="77dp"
++                android:layout_marginLeft="77dp"
++                android:layout_marginEnd="72dp"
++                android:layout_marginRight="72dp"
++                android:layout_marginBottom="40dp"
++                android:background="@drawable/btn_bg"
++                android:fontFamily="@font/poppins_bold"
++                android:text="Done!"
++                android:textAllCaps="false"
++                android:textColor="@color/white"
++                android:textSize="35sp"
++                app:backgroundTint="#032754"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.522"
++                app:layout_constraintStart_toStartOf="parent" />
++        </LinearLayout>
++
+ 
+-</androidx.constraintlayout.widget.ConstraintLayout>
++    </ScrollView>
++
++
++
++
++</RelativeLayout>
+Index: app/src/main/res/layout/activity_update_password.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:background=\"@drawable/real_background\"\n    tools:context=\"com.ucsd.connect.demo.UpdatePassword\">\n\n\n    <EditText\n        android:id=\"@+id/etNewPassword\"\n        android:layout_width=\"265dp\"\n        android:layout_height=\"60dp\"\n        android:layout_marginLeft=\"8dp\"\n        android:layout_marginTop=\"316dp\"\n        android:layout_marginRight=\"8dp\"\n        android:background=\"@drawable/input_bg\"\n        android:drawableLeft=\"@drawable/ic_password\"\n        android:elevation=\"10dp\"\n        android:ems=\"10\"\n        android:hint=\"New Password\"\n        android:inputType=\"textPassword\"\n        android:outlineSpotShadowColor=\"@color/black\"\n        android:padding=\"8dp\"\n        android:selectAllOnFocus=\"true\"\n        android:textColor=\"#000000\"\n        android:textColorHint=\"#949494\"\n        android:textSize=\"25sp\"\n        app:layout_constraintBottom_toTopOf=\"@+id/btnUpdatePassword\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.507\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:layout_constraintVertical_bias=\"0.067\" />\n\n    <Button\n        android:id=\"@+id/btnUpdatePassword\"\n        android:layout_width=\"262dp\"\n        android:layout_height=\"70dp\"\n        android:layout_marginLeft=\"8dp\"\n        android:layout_marginRight=\"8dp\"\n        android:layout_marginBottom=\"104dp\"\n        android:background=\"@drawable/btn_bg\"\n        android:text=\"Update\"\n        android:textAllCaps=\"false\"\n        android:textColor=\"@color/white\"\n        android:textSize=\"30sp\"\n        app:layout_constraintBottom_toBottomOf=\"@+id/imageView\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.496\"\n        app:layout_constraintStart_toStartOf=\"parent\" />\n\n    <ImageView\n        android:id=\"@+id/imageView\"\n        android:layout_width=\"318dp\"\n        android:layout_height=\"477dp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.493\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:layout_constraintVertical_bias=\"0.717\"\n        app:srcCompat=\"@drawable/white_background\" />\n\n</androidx.constraintlayout.widget.ConstraintLayout>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_update_password.xml	(revision e908f2e73ea1e768667c88a0d6ff691564c2d12b)
++++ app/src/main/res/layout/activity_update_password.xml	(date 1606029183000)
+@@ -12,6 +12,7 @@
+         android:id="@+id/etNewPassword"
+         android:layout_width="265dp"
+         android:layout_height="60dp"
++
+         android:layout_marginLeft="8dp"
+         android:layout_marginTop="316dp"
+         android:layout_marginRight="8dp"
+Index: app/src/main/res/layout/activity_registration.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:background=\"@drawable/real_background\"\n    tools:context=\"com.ucsd.connect.demo.RegistrationActivity\">\n\n    <ImageView\n        android:id=\"@+id/imageView2\"\n        android:layout_width=\"315dp\"\n        android:layout_height=\"471dp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/ivProfile\"\n        app:layout_constraintVertical_bias=\"0.382\"\n        app:srcCompat=\"@drawable/white_background\" />\n\n    <EditText\n        android:id=\"@+id/etUserName\"\n        android:layout_width=\"265dp\"\n        android:layout_height=\"60dp\"\n        android:layout_marginLeft=\"8dp\"\n        android:layout_marginTop=\"28dp\"\n        android:layout_marginRight=\"8dp\"\n        android:background=\"@drawable/input_bg\"\n        android:drawableLeft=\"@drawable/ic_username\"\n        android:elevation=\"10dp\"\n        android:ems=\"10\"\n\n        android:hint=\"Username\"\n\n        android:inputType=\"textPersonName\"\n        android:outlineSpotShadowColor=\"@color/black\"\n        android:padding=\"8dp\"\n        android:selectAllOnFocus=\"true\"\n        android:textColor=\"#000000\"\n        android:textColorHint=\"#949494\"\n        android:textSize=\"25sp\"\n        app:layout_constraintHorizontal_bias=\"0.484\"\n        app:layout_constraintLeft_toLeftOf=\"parent\"\n        app:layout_constraintRight_toRightOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"@+id/imageView2\" />\n\n    <EditText\n        android:id=\"@+id/etUserEmail\"\n        android:layout_width=\"265dp\"\n        android:layout_height=\"60dp\"\n        android:layout_marginLeft=\"8dp\"\n        android:layout_marginTop=\"20dp\"\n        android:layout_marginRight=\"8dp\"\n        android:background=\"@drawable/input_bg\"\n        android:drawableLeft=\"@drawable/ic_baseline_email_24\"\n        android:elevation=\"10dp\"\n        android:ems=\"10\"\n        android:hint=\"Email\"\n        android:inputType=\"textEmailAddress\"\n        android:outlineSpotShadowColor=\"@color/black\"\n        android:padding=\"8dp\"\n        android:selectAllOnFocus=\"true\"\n        android:textColor=\"#000000\"\n        android:textColorHint=\"#949494\"\n        android:textSize=\"25sp\"\n        app:layout_constraintLeft_toLeftOf=\"parent\"\n        app:layout_constraintRight_toRightOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/etUserName\" />\n\n    <EditText\n        android:id=\"@+id/etUserPassword\"\n        android:layout_width=\"265dp\"\n        android:layout_height=\"60dp\"\n        android:layout_marginLeft=\"8dp\"\n        android:layout_marginTop=\"20dp\"\n        android:layout_marginRight=\"8dp\"\n        android:background=\"@drawable/input_bg\"\n        android:drawableLeft=\"@drawable/ic_password\"\n        android:elevation=\"10dp\"\n        android:ems=\"10\"\n        android:hint=\"Password\"\n        android:inputType=\"textPassword\"\n        android:outlineSpotShadowColor=\"@color/black\"\n        android:padding=\"8dp\"\n        android:selectAllOnFocus=\"true\"\n        android:textColor=\"#000000\"\n        android:textColorHint=\"#949494\"\n        android:textSize=\"25sp\"\n        app:layout_constraintLeft_toLeftOf=\"parent\"\n        app:layout_constraintRight_toRightOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/etUserEmail\" />\n\n    <Button\n        android:id=\"@+id/btnRegister\"\n        android:layout_width=\"262dp\"\n        android:layout_height=\"70dp\"\n        android:layout_marginLeft=\"8dp\"\n        android:layout_marginTop=\"20dp\"\n        android:layout_marginRight=\"8dp\"\n        android:layout_marginBottom=\"8dp\"\n        android:background=\"@drawable/btn_bg\"\n        android:fontFamily=\"@font/poppins_medium\"\n        android:text=\"Register\"\n        android:textAllCaps=\"false\"\n        android:textColor=\"@color/white\"\n        android:textSize=\"30sp\"\n        app:backgroundTint=\"#032754\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.511\"\n        app:layout_constraintLeft_toLeftOf=\"parent\"\n        app:layout_constraintRight_toRightOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/etAge\"\n        app:layout_constraintVertical_bias=\"0.0\" />\n\n    <TextView\n        android:id=\"@+id/tvUserLogin\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginBottom=\"8dp\"\n        android:layout_marginLeft=\"8dp\"\n        android:layout_marginRight=\"8dp\"\n        android:layout_marginTop=\"8dp\"\n        android:text=\"Existing User? Login!\"\n        android:textColor=\"#3C96E9\"\n        android:textSize=\"23sp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.503\"\n        app:layout_constraintLeft_toLeftOf=\"parent\"\n        app:layout_constraintRight_toRightOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/btnRegister\"\n        app:layout_constraintVertical_bias=\"0.0\" />\n\n    <EditText\n\n        android:id=\"@+id/etAge\"\n        android:layout_width=\"265dp\"\n        android:layout_height=\"60dp\"\n        android:layout_marginStart=\"24dp\"\n        android:layout_marginTop=\"20dp\"\n        android:layout_marginEnd=\"24dp\"\n        android:background=\"@drawable/input_bg\"\n        android:drawableLeft=\"@drawable/ic_baseline_cake_24\"\n        android:elevation=\"10dp\"\n        android:ems=\"10\"\n        android:hint=\"Age\"\n        android:inputType=\"number\"\n        android:outlineSpotShadowColor=\"@color/black\"\n        android:padding=\"8dp\"\n\n        android:selectAllOnFocus=\"true\"\n        android:textColor=\"#000000\"\n        android:textColorHint=\"#949494\"\n        android:textSize=\"25sp\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/etUserPassword\" />\n\n    <ImageView\n        android:id=\"@+id/ivProfile\"\n        android:layout_width=\"150dp\"\n        android:layout_height=\"150dp\"\n        android:layout_marginStart=\"8dp\"\n        android:layout_marginTop=\"8dp\"\n        android:layout_marginEnd=\"8dp\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:srcCompat=\"@mipmap/ic_launcher\" />\n\n    <!--    <ImageView-->\n<!--        android:id=\"@+id/imageView\"-->\n<!--        android:layout_width=\"318dp\"-->\n<!--        android:layout_height=\"477dp\"-->\n<!--        app:layout_constraintBottom_toBottomOf=\"parent\"-->\n<!--        app:layout_constraintEnd_toEndOf=\"parent\"-->\n<!--        app:layout_constraintHorizontal_bias=\"0.494\"-->\n<!--        app:layout_constraintStart_toStartOf=\"parent\"-->\n<!--        app:layout_constraintTop_toTopOf=\"parent\"-->\n<!--        app:layout_constraintVertical_bias=\"0.606\"-->\n<!--        app:srcCompat=\"@drawable/white_background\" />-->\n\n    <!--    <ImageView-->\n    <!--        android:id=\"@+id/imageView\"-->\n    <!--        android:layout_width=\"318dp\"-->\n    <!--        android:layout_height=\"477dp\"-->\n    <!--        app:layout_constraintBottom_toBottomOf=\"parent\"-->\n    <!--        app:layout_constraintEnd_toEndOf=\"parent\"-->\n    <!--        app:layout_constraintHorizontal_bias=\"0.494\"-->\n    <!--        app:layout_constraintStart_toStartOf=\"parent\"-->\n    <!--        app:layout_constraintTop_toTopOf=\"parent\"-->\n    <!--        app:layout_constraintVertical_bias=\"0.606\"-->\n    <!--        app:srcCompat=\"@drawable/white_background\" />-->\n\n</androidx.constraintlayout.widget.ConstraintLayout>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_registration.xml	(revision e908f2e73ea1e768667c88a0d6ff691564c2d12b)
++++ app/src/main/res/layout/activity_registration.xml	(date 1606027507000)
+@@ -28,6 +28,7 @@
+         android:background="@drawable/input_bg"
+         android:drawableLeft="@drawable/ic_username"
+         android:elevation="10dp"
++
+         android:ems="10"
+ 
+         android:hint="Username"
+Index: .idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_15_0_1_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\n  <library name=\"Gradle: com.google.android.gms:play-services-ads-identifier:15.0.1@aar\">\n    <CLASSES>\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-play-services-ads-identifier-15.0.1.aar/698e20d7064392db9aaa6e2d72d9de76/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-play-services-ads-identifier-15.0.1.aar/b9d94aaa9b7f7307863c73740c489a2d/res\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-play-services-ads-identifier-15.0.1.aar/029c2e06048010f2b26eb4638e467216/jars/classes.jar!/\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-play-services-ads-identifier-15.0.1.aar/029c2e06048010f2b26eb4638e467216/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-play-services-ads-identifier-15.0.1.aar/029c2e06048010f2b26eb4638e467216/AndroidManifest.xml\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-play-services-ads-identifier-15.0.1.aar/40d4252c96b68d05862bf216fcaf111f/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6d3a5e746684e31901053ae0574b9ed9/jetified-play-services-ads-identifier-15.0.1/AndroidManifest.xml\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6d3a5e746684e31901053ae0574b9ed9/jetified-play-services-ads-identifier-15.0.1/jars/classes.jar!/\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6d3a5e746684e31901053ae0574b9ed9/jetified-play-services-ads-identifier-15.0.1/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/70b068a513b35fc0132d413c4795032a/jetified-play-services-ads-identifier-15.0.1/res\" />\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/70b068a513b35fc0132d413c4795032a/jetified-play-services-ads-identifier-15.0.1/AndroidManifest.xml\" />\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/70b068a513b35fc0132d413c4795032a/jetified-play-services-ads-identifier-15.0.1/jars/classes.jar!/\" />\n    </CLASSES>\n    <JAVADOC />\n    <SOURCES />\n  </library>\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_15_0_1_aar.xml	(revision e908f2e73ea1e768667c88a0d6ff691564c2d12b)
++++ .idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_15_0_1_aar.xml	(date 1606026258000)
+@@ -7,12 +7,13 @@
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-play-services-ads-identifier-15.0.1.aar/029c2e06048010f2b26eb4638e467216/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-play-services-ads-identifier-15.0.1.aar/029c2e06048010f2b26eb4638e467216/AndroidManifest.xml" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-play-services-ads-identifier-15.0.1.aar/40d4252c96b68d05862bf216fcaf111f/res" />
+-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6d3a5e746684e31901053ae0574b9ed9/jetified-play-services-ads-identifier-15.0.1/AndroidManifest.xml" />
+-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6d3a5e746684e31901053ae0574b9ed9/jetified-play-services-ads-identifier-15.0.1/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6d3a5e746684e31901053ae0574b9ed9/jetified-play-services-ads-identifier-15.0.1/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/70b068a513b35fc0132d413c4795032a/jetified-play-services-ads-identifier-15.0.1/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/70b068a513b35fc0132d413c4795032a/jetified-play-services-ads-identifier-15.0.1/AndroidManifest.xml" />
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/70b068a513b35fc0132d413c4795032a/jetified-play-services-ads-identifier-15.0.1/jars/classes.jar!/" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7f0c58d8b2fd43b531f7e30d43f7d6b4/jetified-play-services-ads-identifier-15.0.1/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7f0c58d8b2fd43b531f7e30d43f7d6b4/jetified-play-services-ads-identifier-15.0.1/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7f0c58d8b2fd43b531f7e30d43f7d6b4/jetified-play-services-ads-identifier-15.0.1/res" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />
