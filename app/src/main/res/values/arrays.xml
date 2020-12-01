@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="matchTraits">
-        <item>Gaming</item>
-        <item>Coding</item>
-        <item>Hiking</item>
-        <item>Memes</item>
-        <item>Food</item>
-    </string-array>
+<!--    <string-array name="matchTraits">-->
+<!--        <item>Gaming</item>-->
+<!--        <item>Coding</item>-->
+<!--        <item>Hiking</item>-->
+<!--        <item>Memes</item>-->
+<!--        <item>Food</item>-->
+<!--    </string-array>-->
 
     <integer-array name="images">
         <item>@drawable/invisible</item>
@@ -15,9 +15,31 @@
         <item>@drawable/invisible</item>
         <item>@drawable/invisible</item>
         <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+
+<!--        <item>@drawable/anime</item>-->
+<!--        <item>@drawable/boba</item>-->
+<!--        <item>@drawable/depressed</item>-->
+<!--        <item>@drawable/game</item>-->
+<!--        <item>@drawable/ieee</item>-->
+<!--        <item>@drawable/food</item>-->
+<!--        <item>@drawable/raccoon</item>-->
+<!--        <item>@drawable/religion</item>-->
+<!--        <item>@drawable/stem</item>-->
+<!--        <item>@drawable/workout</item>-->
+
     </integer-array>
 
     <integer-array name="colors">
+        <item>@color/grey</item>
+        <item>@color/grey</item>
+        <item>@color/grey</item>
+        <item>@color/grey</item>
+        <item>@color/grey</item>
         <item>@color/grey</item>
         <item>@color/grey</item>
         <item>@color/grey</item>

@@ -5,15 +5,22 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 import com.ucsd.connect.demo.R;
 import com.stfalcon.frescoimageviewer.ImageViewer;
 
@@ -22,6 +29,7 @@ import java.util.ArrayList;
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder> {
 
     ArrayList<MessageObject> messageList;
+    FirebaseStorage firebaseStorage;
 
     public MessageAdapter(ArrayList<MessageObject> messageList){
         this.messageList = messageList;
@@ -42,6 +50,16 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     public void onBindViewHolder(@NonNull final MessageViewHolder holder, final int position) {
         holder.mMessage.setText(messageList.get(position).getMessage());
         holder.mSender.setText(messageList.get(position).getSenderId());
+
+        firebaseStorage = FirebaseStorage.getInstance();
+
+        StorageReference storageReference = firebaseStorage.getReference();
+        storageReference.child(messageList.get(position).getSenderId()).child("Images/Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).fit().centerCrop().into(holder.mImage);
+            }
+        });
 
         if(messageList.get(holder.getAdapterPosition()).getMediaUrlList().isEmpty())
             holder.mViewMedia.setVisibility(View.GONE);
@@ -70,14 +88,17 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
                     mSender;
         Button mViewMedia;
         LinearLayout mLayout;
+        ImageView mImage;
         MessageViewHolder(View view){
             super(view);
             mLayout = view.findViewById(R.id.layout);
 
             mMessage = view.findViewById(R.id.message);
             mSender = view.findViewById(R.id.sender);
+            mImage = view.findViewById(R.id.ProfilePic);
 
             mViewMedia = view.findViewById(R.id.viewMedia);
+
         }
     }
 }

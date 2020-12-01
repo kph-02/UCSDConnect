@@ -5,6 +5,7 @@ package com.ucsd.connect.demo.User;
  */
 
 import java.io.Serializable;
+import java.util.List;
 
 public class UserProfile implements Serializable {
     public String userAge;
@@ -12,6 +13,7 @@ public class UserProfile implements Serializable {
     public String userName;
     public String uid;
     public String notificationKey;
+    public List<String> traits;
     private Boolean selected = false;
 
     public UserProfile(){}
@@ -26,6 +28,23 @@ public class UserProfile implements Serializable {
         this.userEmail = userEmail;
         this.userName = userName;
     }
+
+    public UserProfile(String uid, String userAge, String userEmail, String userName, List<String> traits) {
+        this.uid = uid;
+        this.userAge = userAge;
+        this.userEmail = userEmail;
+        this.userName = userName;
+        this.traits = traits;
+    }
+
+    public UserProfile(UserProfile otherUser) {
+        this.uid = otherUser.getUid();
+        this.userAge = otherUser.getUserAge();
+        this.userEmail = otherUser.getUserEmail();
+        this.userName = otherUser.getUserName();
+        this.traits = otherUser.getTraits();
+    }
+
     public String getUid() {
         return uid;
     }
@@ -68,6 +87,10 @@ public class UserProfile implements Serializable {
     }
     public void setNotificationKey(String notificationKey) {
         this.notificationKey = notificationKey;
+    }
+
+    public List<String> getTraits() {
+        return traits;
     }
 
 

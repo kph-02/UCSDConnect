@@ -17,7 +17,7 @@ public class SplashSceen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide(); //hide the title bar
+        //getSupportActionBar().hide(); //hide the title bar
         setContentView(R.layout.activity_splash_sceen);
         //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             //Window window = getWindow();

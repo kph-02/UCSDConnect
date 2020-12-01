@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide(); //hide the title bar
+        //getSupportActionBar().hide(); //hide the title bar
         setContentView(R.layout.activity_login);
         Name = (EditText)findViewById(R.id.username);
         Password = (EditText)findViewById(R.id.password);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(user != null){
             finish();
-            startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            startActivity(new Intent(MainActivity.this, MatchActivity.class));
         }
 
         Login.setOnClickListener(new View.OnClickListener() {
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
         Boolean emailflag = firebaseUser.isEmailVerified();
 
-        startActivity(new Intent(MainActivity.this, SecondActivity.class));
+        startActivity(new Intent(MainActivity.this, MatchActivity.class));
 
 //        if(emailflag){
 //            finish();
