@@ -71,6 +71,7 @@
         android:layout_marginTop="44dp"
 
         android:background="@drawable/round_button"
+        android:shadowColor="#FEC40A"
         android:text="Dog"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -83,6 +84,7 @@
         android:layout_width="114dp"
         android:layout_height="51dp"
         android:background="@drawable/round_button"
+        android:shadowColor="#FFFFFF"
         android:text="Cat"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
