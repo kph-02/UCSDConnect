@@ -52,8 +52,6 @@ public class MatchActivity extends AppCompatActivity {
 
     BubblePicker picker;
 
-    private String matchName;
-    private String matchUid;
     private List<String> matchTraits;
     private List<String> myTraits;
     private ArrayList<String> similarTraits;
@@ -69,6 +67,8 @@ public class MatchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match);
+
+        matchUser = new UserProfile();
 
         myTraits = new ArrayList<String>();
         matchTraits = new ArrayList<String>();
@@ -101,7 +101,6 @@ public class MatchActivity extends AppCompatActivity {
 
         getNewMatch();
         matchNameText = (TextView) findViewById(R.id.match_name);
-        matchNameText.setText(this.matchName);
         picker = findViewById(R.id.picker);
         setBubblePicker();
         Button findTritonsBtn = (Button) findViewById(R.id.find_tritons_button);
@@ -161,15 +160,15 @@ public class MatchActivity extends AppCompatActivity {
         newChatMap.put("users/" + FirebaseAuth.getInstance().getUid(), true);
 
 
-        newChatMap.put("users/" + matchUid, true);
-        userDb.child(matchUid).child("chat").child(key).setValue(true);
-
-
+        newChatMap.put("users/" + matchUser.getUid(), true);
+        userDb.child(matchUser.getUid()).child("chat").child(key).setValue(true);
+        Log.d("test", matchUser.getUid());
 
         chatInfoDb.updateChildren(newChatMap);
         userDb.child(FirebaseAuth.getInstance().getUid()).child("chat").child(key).setValue(true);
 
-        matchChat = new ChatObject(key, currUser, (ArrayList<UserProfile>) Arrays.asList(currUser, matchUser));
+        matchChat = new ChatObject(key, currUser, new ArrayList<UserProfile>(Arrays.asList(currUser, matchUser)));
+        matchChat.setOtherUser(matchUser);
 
     }
 
@@ -193,18 +192,19 @@ public class MatchActivity extends AppCompatActivity {
                     for(DataSnapshot userSnapshot : dataSnapshot.getChildren()){
                         Log.d("test", Integer.toString(count));
                         if (count == randInt) {
-                            matchNameText.setText((String) userSnapshot.child("userName").getValue());
-                            matchUid = (String) userSnapshot.child("uid").getValue();
+                            matchUser.setUserName((String) userSnapshot.child("userName").getValue());
+                            matchUser.setUid((String) userSnapshot.child("uid").getValue());
+                            Log.d("test", (String) userSnapshot.child("uid").getValue());
+                            Log.d("test", matchUser.getUid());
+                            matchNameText.setText(matchUser.getUserName());
                             for (DataSnapshot trait : userSnapshot.child("traits").getChildren()) {
                                 matchTraits.add((String) trait.getValue());
                             }
-                            matchUser = new UserProfile(userSnapshot.getValue(UserProfile.class));
                             break;
                         }
                         count++;
                     }
                 }
-                setBubblePicker();
             }
 
             @Override

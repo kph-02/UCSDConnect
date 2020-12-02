@@ -57,11 +57,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
     @Override
     public void onBindViewHolder(@NonNull final MessageViewHolder holder, final int position) {
-        holder.mMessage.setText(messageList.get(position).getMessage());
-
-
-        holder.mSender.setText(uidToName.get(messageList.get(position).getSenderId()));
-
         firebaseStorage = FirebaseStorage.getInstance();
 
         StorageReference storageReference = firebaseStorage.getReference();
@@ -71,7 +66,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
                 Picasso.get().load(uri).fit().centerCrop().into(holder.mImage);
             }
         });
+        holder.mMessage.setText(messageList.get(position).getMessage());
 
+
+        holder.mSender.setText(uidToName.get(messageList.get(position).getSenderId()));
 
         if(messageList.get(holder.getAdapterPosition()).getMediaUrlList().isEmpty())
             holder.mViewMedia.setVisibility(View.GONE);

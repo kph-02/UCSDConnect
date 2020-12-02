@@ -81,7 +81,6 @@ public class ContactPageActivity extends AppCompatActivity {
 //            }
 //        });
 
-        getPermissions();
         initializeRecyclerView();
 
         currUid = FirebaseAuth.getInstance().getUid();

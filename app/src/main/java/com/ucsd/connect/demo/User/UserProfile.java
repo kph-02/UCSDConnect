@@ -50,7 +50,7 @@ public class UserProfile implements Serializable {
     }
 
     public void setUid(String uid) {
-        this.userEmail = uid;
+        this.uid = uid;
     }
 
     public String getUserAge() {
