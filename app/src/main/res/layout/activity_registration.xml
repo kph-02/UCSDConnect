@@ -100,7 +100,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/btn_bg"
-        android:fontFamily="@font/poppins_medium"
+        android:fontFamily="@font/montserrat_semibold"
         android:text="Register"
         android:textAllCaps="false"
         android:textColor="@color/white"

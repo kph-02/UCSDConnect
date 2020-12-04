@@ -28,7 +28,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="95dp"
         android:background="@drawable/rounded"
-        android:backgroundTint="@color/colorPrimaryDark"
+        app:backgroundTint="#032754"
         android:fontFamily="@font/montserrat_semibold"
         android:text="@string/find_tritons_button"
         android:textAllCaps="false"
@@ -38,6 +38,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <Button
         android:id="@+id/find_Connect"
         android:layout_width="150dp"
@@ -46,7 +47,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="95dp"
         android:background="@drawable/rounded"
-        android:backgroundTint="@color/colorPrimaryDark"
+        app:backgroundTint="#032754"
         android:fontFamily="@font/montserrat_semibold"
         android:text="@string/connect_button"
         android:textAllCaps="false"

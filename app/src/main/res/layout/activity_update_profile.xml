@@ -11,15 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="317dp"
-        android:layout_height="622dp"
+        android:layout_width="316dp"
+        android:layout_height="544dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.495"
+        app:layout_constraintVertical_bias="0.411"
         app:srcCompat="@drawable/white_background" />
 
     <ImageView
@@ -35,67 +37,77 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.132"
+        app:layout_constraintVertical_bias="0.188"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <EditText
         android:id="@+id/etNameUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="265dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="396dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_username"
+        android:elevation="10dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
+        android:outlineSpotShadowColor="@color/black"
+        android:padding="8dp"
+        android:selectAllOnFocus="true"
+        android:textColor="#000000"
+        android:textColorHint="#949494"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivProfileUpdate"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/etEmailUpdate"
-        android:layout_width="222dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="265dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="316dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_username"
+        android:elevation="10dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:outlineSpotShadowColor="@color/black"
+        android:padding="8dp"
+        android:selectAllOnFocus="true"
+        android:textColor="#000000"
+        android:textColorHint="#949494"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNameUpdate"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/etAgeUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="265dp"
+        android:layout_height="60dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_username"
+        android:elevation="10dp"
         android:ems="10"
         android:hint="Age"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:outlineSpotShadowColor="@color/black"
+        android:padding="8dp"
+        android:selectAllOnFocus="true"
+        android:textColor="#000000"
+        android:textColorHint="#949494"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmailUpdate"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintTop_toBottomOf="@id/etEmailUpdate"
+        app:layout_constraintVertical_bias="0.072" />
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="262dp"
+        android:layout_height="70dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -105,13 +117,13 @@
         android:text="Save"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="30sp"
         app:backgroundTint="#032754"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etAgeUpdate"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintVertical_bias="0.148" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
