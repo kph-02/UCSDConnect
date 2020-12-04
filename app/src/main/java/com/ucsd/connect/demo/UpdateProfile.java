@@ -111,20 +111,21 @@ public class UpdateProfile extends AppCompatActivity {
 
                 databaseReference.setValue(userProfile);
 
-                StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");  //User id/Images/Profile Pic.jpg
-                UploadTask uploadTask = imageReference.putFile(imagePath);
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(UpdateProfile.this, "Upload failed!", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                        Toast.makeText(UpdateProfile.this, "Upload successful!", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
+                if (imagePath != null) {
+                    StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");  //User id/Images/Profile Pic.jpg
+                    UploadTask uploadTask = imageReference.putFile(imagePath);
+                    uploadTask.addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(UpdateProfile.this, "Upload failed!", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                            Toast.makeText(UpdateProfile.this, "Upload successful!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
                 finish();
             }
         });

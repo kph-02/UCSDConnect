@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(user != null){
             finish();
-            startActivity(new Intent(MainActivity.this, MatchActivity.class));
+            startActivity(new Intent(MainActivity.this, MatchStart.class));
         }
 
         Login.setOnClickListener(new View.OnClickListener() {
