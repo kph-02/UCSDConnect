@@ -26,48 +26,52 @@
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="11dp"
         android:layout_marginBottom="95dp"
         android:background="@drawable/rounded"
-        app:backgroundTint="#032754"
         android:fontFamily="@font/montserrat_semibold"
+        android:outlineAmbientShadowColor="@color/black"
         android:text="@string/find_tritons_button"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:outlineAmbientShadowColor="@color/black"
+        app:backgroundTint="#032754"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/picker" />
 
+
+    <!--This text should later be able to change depending on the match with string/match_name -->
 
     <Button
         android:id="@+id/find_Connect"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:layout_marginBottom="95dp"
         android:background="@drawable/rounded"
-        app:backgroundTint="#032754"
         android:fontFamily="@font/montserrat_semibold"
         android:text="@string/connect_button"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
+        app:backgroundTint="#032754"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/picker"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <!--This text should later be able to change depending on the match with string/match_name -->
     <TextView
         android:id="@+id/match_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/playfairdisplay_variablefont_wght"
         android:text="@string/match_name"
         android:textColor="#000000"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
