@@ -19,9 +19,19 @@
 
     <ImageView
         android:background="@drawable/real_background"
-        android:alpha="0.70"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="315dp"
+        android:layout_height="595dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242"
+        app:srcCompat="@drawable/white_background" />
 
     <ImageView
         android:id="@+id/ivProfilePic"
@@ -82,12 +92,15 @@
         android:background="@drawable/rounded"
         android:fontFamily="@font/montserrat_semibold"
         android:text="Edit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="#032754"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfileEmail"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintVertical_bias="0.106" />
 
     <TextView
         android:id="@+id/tvProfileAge"
@@ -118,6 +131,9 @@
         android:background="@drawable/rounded"
         android:fontFamily="@font/montserrat_semibold"
         android:text="Change Password"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="#032754"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -136,6 +152,9 @@
         android:background="@drawable/rounded"
         android:fontFamily="@font/montserrat_semibold"
         android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="#032754"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
