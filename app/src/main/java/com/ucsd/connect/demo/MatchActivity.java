@@ -154,6 +154,7 @@ public class MatchActivity extends AppCompatActivity {
     }
 
     private void setBubblePicker() {
+        final String[] allTraits = getResources().getStringArray(R.array.allTraits);
         final TypedArray colors = getResources().obtainTypedArray(R.array.colors);
         final TypedArray images = getResources().obtainTypedArray(R.array.images);
 
@@ -175,7 +176,8 @@ public class MatchActivity extends AppCompatActivity {
                         colors.getColor((position * 2) % 8 + 1, 0), BubbleGradient.VERTICAL));
                 //item.setTypeface(mediumTypeface);
                 item.setTextColor(ContextCompat.getColor(MatchActivity.this, android.R.color.white));
-                item.setBackgroundImage(ContextCompat.getDrawable(MatchActivity.this, images.getResourceId(position, 0)));
+                int imageIndex = Arrays.asList(allTraits).indexOf(similarTraits.get(position));
+                item.setBackgroundImage(ContextCompat.getDrawable(MatchActivity.this, images.getResourceId(imageIndex, 0)));
                 return item;
             }
         });
