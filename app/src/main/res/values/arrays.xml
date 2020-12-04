@@ -15,27 +15,27 @@
     </string-array>
 
     <integer-array name="images">
-<!--        <item>@drawable/invisible</item>-->
-<!--        <item>@drawable/invisible</item>-->
-<!--        <item>@drawable/invisible</item>-->
-<!--        <item>@drawable/invisible</item>-->
-<!--        <item>@drawable/invisible</item>-->
-<!--        <item>@drawable/invisible</item>-->
-<!--        <item>@drawable/invisible</item>-->
-<!--        <item>@drawable/invisible</item>-->
-<!--        <item>@drawable/invisible</item>-->
-<!--        <item>@drawable/invisible</item>-->
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
+        <item>@drawable/invisible</item>
 
-        <item>@drawable/anime</item>
-        <item>@drawable/boba</item>
-        <item>@drawable/depressed</item>
-        <item>@drawable/game</item>
-        <item>@drawable/ieee</item>
-        <item>@drawable/food</item>
-        <item>@drawable/raccoon</item>
-        <item>@drawable/religion</item>
-        <item>@drawable/stem</item>
-        <item>@drawable/workout</item>
+<!--        <item>@drawable/anime</item>-->
+<!--        <item>@drawable/boba</item>-->
+<!--        <item>@drawable/depressed</item>-->
+<!--        <item>@drawable/game</item>-->
+<!--        <item>@drawable/ieee</item>-->
+<!--        <item>@drawable/food</item>-->
+<!--        <item>@drawable/raccoon</item>-->
+<!--        <item>@drawable/religion</item>-->
+<!--        <item>@drawable/stem</item>-->
+<!--        <item>@drawable/workout</item>-->
 
     </integer-array>
 

@@ -97,7 +97,7 @@ public class ContactPageActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         break;
                     case R.id.matchMenu:
-                        startActivity(new Intent(getApplicationContext(), MatchActivity.class));
+                        startActivity(new Intent(getApplicationContext(), MatchStart.class));
                         break;
                 }
                 return false;

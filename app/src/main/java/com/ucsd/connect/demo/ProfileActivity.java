@@ -121,7 +121,7 @@ public class ProfileActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), ContactPageActivity.class));
                         break;
                     case R.id.matchMenu:
-                        startActivity(new Intent(getApplicationContext(), MatchActivity.class));
+                        startActivity(new Intent(getApplicationContext(), MatchStart.class));
                         break;
                 }
                 return false;

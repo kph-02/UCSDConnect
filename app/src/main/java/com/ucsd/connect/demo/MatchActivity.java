@@ -52,13 +52,12 @@ public class MatchActivity extends AppCompatActivity {
 
     BubblePicker picker;
 
-    private List<String> matchTraits;
-    private List<String> myTraits;
-    private ArrayList<String> similarTraits;
-    private FirebaseAuth firebaseAuth;
-    private FirebaseDatabase firebaseDatabase;
     private BottomNavigationView menu;
     private ChatObject matchChat;
+//    public static ArrayList<String> similarTraits;
+//    public static UserProfile currUser;
+//    public static UserProfile matchUser;
+    private ArrayList<String> similarTraits;
     private UserProfile currUser;
     private UserProfile matchUser;
     private TextView matchNameText;
@@ -68,49 +67,28 @@ public class MatchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match);
 
-        matchUser = new UserProfile();
+        currUser = (UserProfile) getIntent().getSerializableExtra("currUser");
+        matchUser = (UserProfile) getIntent().getSerializableExtra("matchUser");
+        similarTraits = (ArrayList<String>) getIntent().getSerializableExtra("similarTraits");
 
-        myTraits = new ArrayList<String>();
-        matchTraits = new ArrayList<String>();
-        similarTraits = new ArrayList<String>();
+        Log.d("test", currUser.getUid());
+        Log.d("test", matchUser.getUid());
+        Log.d("test", Integer.toString(similarTraits.size()));
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference().child("user").child(firebaseAuth.getUid());
-
-        Log.d("test", "hi");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                /*
-                for (String trait: (List<String>) dataSnapshot.child("traits").getValue()) {
-                    myTraits.add(trait);
-                }
-                */
-                currUser = new UserProfile(dataSnapshot.getValue(UserProfile.class));
-                Log.d("test", "curr user set");
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(MatchActivity.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        Log.d("test", myTraits.toString());
-
-        getNewMatch();
-        matchNameText = (TextView) findViewById(R.id.match_name);
+        matchNameText = findViewById(R.id.match_name);
         picker = findViewById(R.id.picker);
+
+        matchNameText.setText(matchUser.getUserName());
+
         setBubblePicker();
         Button findTritonsBtn = (Button) findViewById(R.id.find_tritons_button);
 
         findTritonsBtn.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View view) {
-                getNewMatch();
+                Intent intent = new Intent(view.getContext(), MatchStart.class);
+                view.getContext().startActivity(intent);
+                finish();
             }
         });
 
@@ -128,6 +106,7 @@ public class MatchActivity extends AppCompatActivity {
                 Intent intent = new Intent(view.getContext(), ChatActivity.class);
                 intent.putExtra("chatObject", matchChat);
                 view.getContext().startActivity(intent);
+                finish();
             }
         });
 
@@ -139,9 +118,11 @@ public class MatchActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.profileMenu:
                         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        finish();
                         break;
                     case R.id.friendsMenu:
                         startActivity(new Intent(getApplicationContext(), ContactPageActivity.class));
+                        finish();
                         break;
                 }
                 return false;
@@ -172,71 +153,7 @@ public class MatchActivity extends AppCompatActivity {
 
     }
 
-
-    /*
-    * TODO: Implement firebase stuff.
-    * This method should first designate a random user in firebase user database
-    * It then should set matchName instance variable to the username of the random match.
-    * It then should set matchTraits instance variable to all the traits in the firebase database.
-    *
-     */
-    private void getNewMatch() {
-        DatabaseReference mUserDB = FirebaseDatabase.getInstance().getReference().child("user");
-        mUserDB.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
-                    int randInt = (int)(Math.random()*((double)dataSnapshot.getChildrenCount()));
-                    int count = 0;
-                    Log.d("test", Integer.toString(count));
-                    for(DataSnapshot userSnapshot : dataSnapshot.getChildren()){
-                        Log.d("test", Integer.toString(count));
-                        if (count == randInt) {
-                            matchUser.setUserName((String) userSnapshot.child("userName").getValue());
-                            matchUser.setUid((String) userSnapshot.child("uid").getValue());
-                            Log.d("test", (String) userSnapshot.child("uid").getValue());
-                            Log.d("test", matchUser.getUid());
-                            matchNameText.setText(matchUser.getUserName());
-                            for (DataSnapshot trait : userSnapshot.child("traits").getChildren()) {
-                                matchTraits.add((String) trait.getValue());
-                            }
-                            break;
-                        }
-                        count++;
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    private void compareTraits() {
-        if (myTraits != null && matchTraits != null){
-            Log.d("test", "comparing");
-            int myTraitsLength = this.myTraits.size();
-            int matchTraitsLength = this.matchTraits.size();
-            for (int i = 0; i < myTraitsLength; i++) {
-                for (int j = 0; j < matchTraitsLength; j++) {
-                    if(myTraits.get(i).equals(matchTraits.get(j))) {
-                        similarTraits.add(myTraits.get(i));
-                    }
-                }
-            }
-        }
-
-    }
-
     private void setBubblePicker() {
-        compareTraits();
-        //String[] traits = similarTraits.toArray(new String[similarTraits.size()]);
-        //String[] traits = getResources().getStringArray(R.array.matchTraits);
-        //String[] traits = {"Question1","Question2","Question3","Question4","Question5","Question6","Question7","Question8","Question9","Question10" };
-        //Log.d("test", Arrays.toString(traits));
-        final String[] allTraits = getResources().getStringArray(R.array.allTraits);
         final TypedArray colors = getResources().obtainTypedArray(R.array.colors);
         final TypedArray images = getResources().obtainTypedArray(R.array.images);
 
@@ -244,7 +161,7 @@ public class MatchActivity extends AppCompatActivity {
         picker.setAdapter(new BubblePickerAdapter() {
             @Override
             public int getTotalCount() {
-                return allTraits.length;
+                return similarTraits.size();
                 // return similarTraits.size();
             }
 
@@ -252,8 +169,8 @@ public class MatchActivity extends AppCompatActivity {
             @Override
             public PickerItem getItem(int position) {
                 PickerItem item = new PickerItem();
-                //item.setTitle(similarTraits.get(position));
-                item.setTitle(allTraits[position]);
+                item.setTitle(similarTraits.get(position));
+                //item.setTitle(allTraits[position]);
                 item.setGradient(new BubbleGradient(colors.getColor((position * 2) % 8, 0),
                         colors.getColor((position * 2) % 8 + 1, 0), BubbleGradient.VERTICAL));
                 //item.setTypeface(mediumTypeface);
@@ -263,6 +180,9 @@ public class MatchActivity extends AppCompatActivity {
             }
         });
         Log.d("test", "PAIN");
+
+        colors.recycle();
+        images.recycle();
 
         picker.setCenterImmediately(true);
         picker.setBubbleSize(100);
