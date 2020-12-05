@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UCSD Connect with Firebase Login.UCSDConnect.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UCSD Connect with Firebase Login.UCSDConnect.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/UCSDConnect.iml" filepath="$PROJECT_DIR$/.idea/modules/UCSDConnect.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UCSDConnect.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UCSDConnect.app.iml" />
     </modules>
